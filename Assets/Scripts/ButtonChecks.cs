@@ -23,37 +23,53 @@ public class ButtonChecks : MonoBehaviour {
         {
             if (Input.GetKeyDown(keyT))
             {
-                Debug.Log("Pressing T");
-                if (buttons[i].inRange == true && buttons[i].tag == "ButtonT")
+                //Debug.Log("Pressing T");
+                if (buttons[i] != null)
                 {
-                    Destroy(buttons[i].gameObject);
+                    if (buttons[i].inRange == true && buttons[i].tag == "ButtonT")
+                    {
+                        Destroy(buttons[i].gameObject);
+                        buttons[i] = null;
+                    }
                 }
             }
 
-            if (Input.GetKeyDown(keyF))
+            else if (Input.GetKeyDown(keyF))
             {
-                Debug.Log("Pressing F");
-                if (buttons[i].inRange == true && buttons[i].tag == "ButtonF")
+                //Debug.Log("Pressing F");
+                if (buttons[i] != null)
                 {
-                    Destroy(buttons[i].gameObject);
+                    if (buttons[i].inRange == true && buttons[i].tag == "ButtonF")
+                    {
+                        Destroy(buttons[i].gameObject);
+                        buttons[i] = null;
+                    }
                 }
             }
 
-            if (Input.GetKeyDown(keyG))
+            else if (Input.GetKeyDown(keyG))
             {
-                Debug.Log("Pressing G");
-                if (buttons[i].inRange == true && buttons[i].tag == "ButtonG")
+                //Debug.Log("Pressing G");
+                if (buttons[i] != null)
                 {
-                    Destroy(buttons[i].gameObject);
+                    if (buttons[i].inRange == true && buttons[i].tag == "ButtonG")
+                    {
+                        Destroy(buttons[i].gameObject);
+                        buttons[i] = null;
+                    }
                 }
             }
 
-            if (Input.GetKeyDown(keyH))
+            else if (Input.GetKeyDown(keyH))
             {
-                Debug.Log("Pressing H");
-                if (buttons[i].inRange == true && buttons[i].tag == "ButtonH")
+                //Debug.Log("Pressing H");
+                if(buttons[i] != null)
                 {
-                    Destroy(buttons[i].gameObject);
+                    if (buttons[i].inRange == true && buttons[i].tag == "ButtonH")
+                    {
+                        Destroy(buttons[i].gameObject);
+                        buttons[i] = null;
+                    }
                 }
             }
         }//end of for loop
