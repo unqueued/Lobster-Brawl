@@ -18,7 +18,7 @@ public class missBar : MonoBehaviour {
     {
         if (other.gameObject.tag == "ButtonF" || other.gameObject.tag == "ButtonT" || other.gameObject.tag == "ButtonG" || other.gameObject.tag == "ButtonH")
         {
-            Debug.Log("Empty Bar");
+            //Debug.Log("Empty Bar");
             Destroy(other.gameObject);
         }
     }
