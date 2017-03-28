@@ -56,6 +56,7 @@ public class Player2 : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+			Debug.Log ("Space!!");
             jump = true;
         }
     }
