@@ -32,7 +32,7 @@ public class Player2 : MonoBehaviour
     }
     void FixedUpdate()
     {
-        float horizontal = Input.GetAxis("Horizontal");
+		float horizontal = Input.GetAxis("Player2Horizontal");
 
         isGrounded = IsGrounded();
 
