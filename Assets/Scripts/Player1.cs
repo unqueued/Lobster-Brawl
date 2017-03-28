@@ -8,6 +8,8 @@ public class Player1 : MonoBehaviour
     [SerializeField]
     private float movementSpeed = 1.5f;
 
+	private float jumpHeight = 10.0f;
+
     private bool facingRight;
 
     [SerializeField]
@@ -45,6 +47,11 @@ public class Player1 : MonoBehaviour
     {
         myRigidbody.velocity = new Vector2(horizontal * movementSpeed, myRigidbody.velocity.y);
 
+		if (Input.GetKeyDown (KeyCode.Space)) {
+			//Debug.Log ("Space pushed");
+			Jump ();
+		}
+
         if(isGrounded && jump)
         {
             isGrounded = false;
@@ -73,6 +80,18 @@ public class Player1 : MonoBehaviour
             transform.localScale = theScale;
         }
     }
+
+	public void Jump() {
+		//Debug.Log ("Jump!");
+
+		//Debug.Log (myRigidbody.velocity);
+
+		//myRigidbody.AddForce(new Vector2(0, 30.5f));
+		//myRigidbody.velocity = new Vector2(horizontal * movementSpeed, myRigidbody.velocity.y);
+		myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, myRigidbody.velocity.y + jumpHeight);
+
+		//Debug.Log (myRigidbody.velocity);
+	}
 
     private bool IsGrounded()
     {

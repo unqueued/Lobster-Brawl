@@ -18,6 +18,12 @@ public class ButtonChecks : MonoBehaviour {
 	
 	// Update is called once per frame  
 	void Update () {
+
+		if (Input.GetKeyDown (KeyCode.Space)) {
+			//Debug.Log ("Space pressed!");
+
+		}
+
         //Checks through the list if button is in/on the bar line and if the correct button is pressed
         for (int i = 0; i < buttons.Count; i++)
         {
