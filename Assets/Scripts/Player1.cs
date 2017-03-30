@@ -71,9 +71,41 @@ public class Player1 : MonoBehaviour
 	}
 		
 	void OnCollisionEnter2D(Collision2D coll) {
-		Debug.Log ("Collision detected, tag: " + coll.gameObject.tag);
+		//Debug.Log ("Collision detected, tag: " + coll.gameObject.tag);
 		//if (coll.gameObject.tag == "Enemy")
 		//	coll.gameObject.SendMessage ("ApplyDamage", 10);
+
+		// Make players bounce off each other on contact
+		if (coll.gameObject.tag == "Player2") {
+			//Rigidbody2D otherRigidBody2D = coll.gameObject.GetComponent<Rigidbody2D>();
+
+			Debug.Log ("Collision:");
+
+			Debug.Log ("Before: " + myRigidbody.position + " " + myRigidbody.velocity);
+
+			myRigidbody.velocity = new Vector2 (
+				//-(myRigidbody.velocity.x * 5),
+				//-50,
+				myRigidbody.velocity.x,
+				10
+				//myRigidbody.velocity.y
+			);
+
+			Debug.Log ("After: " + myRigidbody.position + " " + myRigidbody.velocity);
+
+			//Debug.Log (otherRigidBody2D.position);
+			//otherRigidBody2D.position.x -= 10;
+			//Debug.Log (otherRigidBody2D.position);
+
+			/*
+			Debug.Log ("before: " + otherRigidBody2D.velocity);
+			otherRigidBody2D.velocity = new Vector2(
+				otherRigidBody2D.velocity.x - 10,
+				otherRigidBody2D.velocity.y + jumpHeight
+			);
+			Debug.Log ("after: " + otherRigidBody2D.velocity);
+			*/
+		}
 	}
 
     private bool IsGrounded()
