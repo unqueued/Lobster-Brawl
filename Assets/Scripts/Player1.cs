@@ -49,16 +49,20 @@ public class Player1 : MonoBehaviour
 
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			//Debug.Log ("Space pushed");
-			Jump ();
+			if (isGrounded) {
+				Jump ();
+			}
 		}
-
+		/*
         if(isGrounded && jump)
         {
             isGrounded = false;
             myRigidbody.AddForce(new Vector2(0, jumpForce));
         }
+        */
     }
 
+	/*
     private void HandleInput()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -66,6 +70,7 @@ public class Player1 : MonoBehaviour
             jump = true;
         }
     }
+    */
 
     private void Flip(float horizontal)
     {
