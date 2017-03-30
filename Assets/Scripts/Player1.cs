@@ -21,8 +21,6 @@ public class Player1 : MonoBehaviour
     [SerializeField]
     private LayerMask whatIsGround;
 
-    private bool isGrounded;
-
     private bool jump;
 
     [SerializeField]
@@ -48,29 +46,11 @@ public class Player1 : MonoBehaviour
         myRigidbody.velocity = new Vector2(horizontal * movementSpeed, myRigidbody.velocity.y);
 
 		if (Input.GetKeyDown (KeyCode.Space)) {
-			//Debug.Log ("Space pushed");
-			if (isGrounded) {
+			if (IsGrounded()) {
 				Jump ();
 			}
 		}
-		/*
-        if(isGrounded && jump)
-        {
-            isGrounded = false;
-            myRigidbody.AddForce(new Vector2(0, jumpForce));
-        }
-        */
     }
-
-	/*
-    private void HandleInput()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            jump = true;
-        }
-    }
-    */
 
     private void Flip(float horizontal)
     {
@@ -87,15 +67,7 @@ public class Player1 : MonoBehaviour
     }
 
 	public void Jump() {
-		//Debug.Log ("Jump!");
-
-		//Debug.Log (myRigidbody.velocity);
-
-		//myRigidbody.AddForce(new Vector2(0, 30.5f));
-		//myRigidbody.velocity = new Vector2(horizontal * movementSpeed, myRigidbody.velocity.y);
 		myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, myRigidbody.velocity.y + jumpHeight);
-
-		//Debug.Log (myRigidbody.velocity);
 	}
 
     private bool IsGrounded()
