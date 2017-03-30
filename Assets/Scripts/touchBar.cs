@@ -13,12 +13,16 @@ public class touchBar : MonoBehaviour {
 	    
 	}
 
+
+	// TODO
+	// This needs to be cleaned up a lot...
+
     //Check if button is touching bar line
     void OnTriggerStay2D(Collider2D other)
     {
         if(other.gameObject.tag == "ButtonF" || other.gameObject.tag == "ButtonT" || other.gameObject.tag == "ButtonG" || other.gameObject.tag == "ButtonH")
         {
-            Debug.Log("inRange");
+            //Debug.Log("inRange");
             other.gameObject.GetComponent<MoveButton>().inRange = true;
         }
     }
@@ -28,7 +32,7 @@ public class touchBar : MonoBehaviour {
     {
         if (other.gameObject.tag == "ButtonF" || other.gameObject.tag == "ButtonT" || other.gameObject.tag == "ButtonG" || other.gameObject.tag == "ButtonH")
         {
-            Debug.Log("not inRange");
+            //Debug.Log("not inRange");
             other.gameObject.GetComponent<MoveButton>().inRange = false;
         }
     }

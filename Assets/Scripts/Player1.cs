@@ -8,6 +8,8 @@ public class Player1 : MonoBehaviour
     [SerializeField]
     private float movementSpeed = 1.5f;
 
+	private float jumpHeight = 10.0f;
+
     private bool facingRight;
 
     [SerializeField]
@@ -18,8 +20,6 @@ public class Player1 : MonoBehaviour
 
     [SerializeField]
     private LayerMask whatIsGround;
-
-    private bool isGrounded;
 
     private bool jump;
 
@@ -34,7 +34,7 @@ public class Player1 : MonoBehaviour
     {
         float horizontal = Input.GetAxis("Horizontal");
 
-        isGrounded = IsGrounded();
+        //isGrounded = IsGrounded();
 
         HandleMovement(horizontal);
 
@@ -45,19 +45,11 @@ public class Player1 : MonoBehaviour
     {
         myRigidbody.velocity = new Vector2(horizontal * movementSpeed, myRigidbody.velocity.y);
 
-        if(isGrounded && jump)
-        {
-            isGrounded = false;
-            myRigidbody.AddForce(new Vector2(0, jumpForce));
-        }
-    }
-
-    private void HandleInput()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            jump = true;
-        }
+		if (Input.GetKeyDown (KeyCode.Space)) {
+			if (IsGrounded()) {
+				Jump ();
+			}
+		}
     }
 
     private void Flip(float horizontal)
@@ -73,6 +65,48 @@ public class Player1 : MonoBehaviour
             transform.localScale = theScale;
         }
     }
+
+	public void Jump() {
+		myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, myRigidbody.velocity.y + jumpHeight);
+	}
+		
+	void OnCollisionEnter2D(Collision2D coll) {
+		//Debug.Log ("Collision detected, tag: " + coll.gameObject.tag);
+		//if (coll.gameObject.tag == "Enemy")
+		//	coll.gameObject.SendMessage ("ApplyDamage", 10);
+
+		// Make players bounce off each other on contact
+		if (coll.gameObject.tag == "Player2") {
+			//Rigidbody2D otherRigidBody2D = coll.gameObject.GetComponent<Rigidbody2D>();
+
+			Debug.Log ("Collision:");
+
+			Debug.Log ("Before: " + myRigidbody.position + " " + myRigidbody.velocity);
+
+			myRigidbody.velocity = new Vector2 (
+				//-(myRigidbody.velocity.x * 5),
+				//-50,
+				myRigidbody.velocity.x,
+				10
+				//myRigidbody.velocity.y
+			);
+
+			Debug.Log ("After: " + myRigidbody.position + " " + myRigidbody.velocity);
+
+			//Debug.Log (otherRigidBody2D.position);
+			//otherRigidBody2D.position.x -= 10;
+			//Debug.Log (otherRigidBody2D.position);
+
+			/*
+			Debug.Log ("before: " + otherRigidBody2D.velocity);
+			otherRigidBody2D.velocity = new Vector2(
+				otherRigidBody2D.velocity.x - 10,
+				otherRigidBody2D.velocity.y + jumpHeight
+			);
+			Debug.Log ("after: " + otherRigidBody2D.velocity);
+			*/
+		}
+	}
 
     private bool IsGrounded()
     {
