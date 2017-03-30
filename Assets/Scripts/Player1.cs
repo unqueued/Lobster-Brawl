@@ -69,6 +69,12 @@ public class Player1 : MonoBehaviour
 	public void Jump() {
 		myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, myRigidbody.velocity.y + jumpHeight);
 	}
+		
+	void OnCollisionEnter2D(Collision2D coll) {
+		Debug.Log ("Collision detected, tag: " + coll.gameObject.tag);
+		//if (coll.gameObject.tag == "Enemy")
+		//	coll.gameObject.SendMessage ("ApplyDamage", 10);
+	}
 
     private bool IsGrounded()
     {
