@@ -33,6 +33,8 @@ public class Generator : MonoBehaviour {
 
     void Create()
     {
+	//temporary, Akash recommend checking out Adobe Soundbooth to mark the timecode
+	//make it into an array and use a loop coroutine to spawn the buttons 
         int randNum = Random.Range(0, 4);
         if (randNum == 0)
         { 
