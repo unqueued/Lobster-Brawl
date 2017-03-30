@@ -34,7 +34,7 @@ public class Player1 : MonoBehaviour
     {
         float horizontal = Input.GetAxis("Horizontal");
 
-        isGrounded = IsGrounded();
+        //isGrounded = IsGrounded();
 
         HandleMovement(horizontal);
 
