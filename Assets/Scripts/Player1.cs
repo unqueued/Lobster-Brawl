@@ -46,8 +46,12 @@ public class Player1 : MonoBehaviour
         myRigidbody.velocity = new Vector2(horizontal * movementSpeed, myRigidbody.velocity.y);
 
 		if (Input.GetKeyDown (KeyCode.Space)) {
-			if (IsGrounded()) {
+
+			Debug.Log ("Space detected");
+			if (IsGrounded ()) {
 				Jump ();
+			} else {
+				Debug.Log ("Did not jump, because no grounded");
 			}
 		}
     }
