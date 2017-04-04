@@ -114,6 +114,7 @@ public class Player1 : MonoBehaviour
 
     private bool IsGrounded()
     {
+		return true;
         if (myRigidbody.velocity.y <= 0)
         {
             foreach (Transform point in groundPoints)
