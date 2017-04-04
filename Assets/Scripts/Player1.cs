@@ -47,11 +47,11 @@ public class Player1 : MonoBehaviour
 
 		if (Input.GetKeyDown (KeyCode.Space)) {
 
-			Debug.Log ("Space detected");
+			//Debug.Log ("Space detected");
 			if (IsGrounded ()) {
 				Jump ();
 			} else {
-				Debug.Log ("Did not jump, because no grounded");
+				//Debug.Log ("Did not jump, because no grounded");
 			}
 		}
     }
