@@ -3,11 +3,14 @@ using System.Collections;
 
 public class MoveButton : MonoBehaviour {
 
-    public float speed;
+    float speed = 10f;
     public bool inRange;
 
     private float x;
     private float y;
+
+    public bool hit;
+    public bool miss;
 
     // Use this for initialization
     void Start () {
@@ -18,7 +21,14 @@ public class MoveButton : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //Goes from their position to the center
-        x -= transform.position.x * speed * Time.deltaTime;
+        if(x > 0)
+        {
+            x -= speed * Time.deltaTime;
+        }
+        else if (x < 0)
+        {
+            x += speed * Time.deltaTime;
+        }
         transform.position = new Vector3(x, y, 0);
     }
 }

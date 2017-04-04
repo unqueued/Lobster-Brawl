@@ -16,10 +16,11 @@ public class missBar : MonoBehaviour {
     //Check if button enter the empty bar and gets destroyed
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "ButtonF" || other.gameObject.tag == "ButtonT" || other.gameObject.tag == "ButtonG" || other.gameObject.tag == "ButtonH")
+        if (other.gameObject.tag == "Triangle" || other.gameObject.tag == "Square" || other.gameObject.tag == "Circle" || other.gameObject.tag == "X")
         {
-            //Debug.Log("Empty Bar");
-            //Destroy(other.gameObject);
+            //other.GetComponent<MoveButton>().miss = true;
+            //Debug.Log("Miss");
+            Destroy(other.gameObject);
         }
     }
 }
