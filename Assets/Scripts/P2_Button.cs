@@ -5,10 +5,10 @@ using System.Collections.Generic;
 public class P2_Button : MonoBehaviour
 {
 
-    public KeyCode triangle;
-    public KeyCode square;
-    public KeyCode circle;
-    public KeyCode x;
+    KeyCode triangle = KeyCode.Joystick1Button3;
+    KeyCode square = KeyCode.Joystick1Button0;
+    KeyCode circle = KeyCode.Joystick1Button2;
+    KeyCode x = KeyCode.Joystick1Button1;
 
     public Generator arr;
     List<MoveButton> buttons2;
@@ -27,7 +27,7 @@ public class P2_Button : MonoBehaviour
         {
             for (int i = 0; i < buttons2.Count; i++)
             {
-                if (Input.GetKeyDown(triangle))
+                if (Input.GetKey(triangle))
                 {
                     //Debug.Log("Pressing triangle");
                     if (buttons2[i] != null)
@@ -42,7 +42,7 @@ public class P2_Button : MonoBehaviour
                     }
                 }
 
-                else if (Input.GetKeyDown(square))
+                else if (Input.GetKey(square))
                 {
                     //Debug.Log("Pressing square");
                     if (buttons2[i] != null)
@@ -57,7 +57,7 @@ public class P2_Button : MonoBehaviour
                     }
                 }
 
-                else if (Input.GetKeyDown(circle))
+                else if (Input.GetKey(circle))
                 {
                     //Debug.Log("Pressing circle");
                     if (buttons2[i] != null)
@@ -72,7 +72,7 @@ public class P2_Button : MonoBehaviour
                     }
                 }
 
-                else if (Input.GetKeyDown(x))
+                else if (Input.GetKey(x))
                 {
                     //Debug.Log("Pressing x");
                     if (buttons2[i] != null)

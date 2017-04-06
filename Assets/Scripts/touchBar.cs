@@ -13,10 +13,6 @@ public class touchBar : MonoBehaviour {
 	    
 	}
 
-
-	// TODO
-	// This needs to be cleaned up a lot...
-
     //Check if button is touching bar line
     void OnTriggerStay2D(Collider2D other)
     {
