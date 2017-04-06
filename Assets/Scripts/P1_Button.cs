@@ -4,10 +4,10 @@ using System.Collections.Generic;
 
 public class P1_Button : MonoBehaviour {
 
-    KeyCode triangle = KeyCode.Joystick2Button3;
-    KeyCode square = KeyCode.Joystick2Button0;
-    KeyCode circle = KeyCode.Joystick2Button2;
-    KeyCode x = KeyCode.Joystick2Button1;
+    public KeyCode triangle;
+    public KeyCode square;
+    public KeyCode circle;
+    public KeyCode x;
 
     public Generator arr;
     List<MoveButton> buttons1;
@@ -24,62 +24,66 @@ public class P1_Button : MonoBehaviour {
         {
             for (int i = 0; i < buttons1.Count; i++)
             {
-                if (Input.GetKey(triangle))
+                if (Input.GetKeyDown(triangle))
                 {
                     //Debug.Log("Pressing triangle");
                     if (buttons1[i] != null)
                     {
                         if (buttons1[i].inRange == true && buttons1[i].tag == "Triangle")
                         {
-                            buttons1[i].GetComponent<MoveButton>().hit = true;
+                            //buttons1[i].GetComponent<MoveButton>().hit = true;
                             Destroy(buttons1[i].gameObject);
                             buttons1[i] = null;
-                            Debug.Log("Hit");
+                            //Debug.Log("Hit");
+                            Streak.hitStreak += 1;
                         }
                     }
                 }
 
-                else if (Input.GetKey(square))
+                else if (Input.GetKeyDown(square))
                 {
                     //Debug.Log("Pressing square");
                     if (buttons1[i] != null)
                     {
                         if (buttons1[i].inRange == true && buttons1[i].tag == "Square")
                         {
-                            buttons1[i].GetComponent<MoveButton>().hit = true;
+                            //buttons1[i].GetComponent<MoveButton>().hit = true;
                             Destroy(buttons1[i].gameObject);
                             buttons1[i] = null;
-                            Debug.Log("Hit");
+                            //Debug.Log("Hit");
+                            Streak.hitStreak += 1;
                         }
                     }
                 }
 
-                else if (Input.GetKey(circle))
+                else if (Input.GetKeyDown(circle))
                 {
                     //Debug.Log("Pressing circle");
                     if (buttons1[i] != null)
                     {
                         if (buttons1[i].inRange == true && buttons1[i].tag == "Circle")
                         {
-                            buttons1[i].GetComponent<MoveButton>().hit = true;
+                            //buttons1[i].GetComponent<MoveButton>().hit = true;
                             Destroy(buttons1[i].gameObject);
                             buttons1[i] = null;
-                            Debug.Log("Hit");
+                            //Debug.Log("Hit");
+                            Streak.hitStreak += 1;
                         }
                     }
                 }
 
-                else if (Input.GetKey(x))
+                else if (Input.GetKeyDown(x))
                 {
                     //Debug.Log("Pressing x");
                     if (buttons1[i] != null)
                     {
                         if (buttons1[i].inRange == true && buttons1[i].tag == "X")
                         {
-                            buttons1[i].GetComponent<MoveButton>().hit = true;
+                            //buttons1[i].GetComponent<MoveButton>().hit = true;
                             Destroy(buttons1[i].gameObject);
                             buttons1[i] = null;
-                            Debug.Log("Hit");
+                            //Debug.Log("Hit");
+                            Streak.hitStreak += 1;
                         }
                     }
                 }

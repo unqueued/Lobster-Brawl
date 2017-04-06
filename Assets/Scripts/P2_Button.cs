@@ -5,10 +5,10 @@ using System.Collections.Generic;
 public class P2_Button : MonoBehaviour
 {
 
-    KeyCode triangle = KeyCode.Joystick1Button3;
-    KeyCode square = KeyCode.Joystick1Button0;
-    KeyCode circle = KeyCode.Joystick1Button2;
-    KeyCode x = KeyCode.Joystick1Button1;
+    public KeyCode triangle;
+    public KeyCode square;
+    public KeyCode circle;
+    public KeyCode x;
 
     public Generator arr;
     List<MoveButton> buttons2;
@@ -27,7 +27,7 @@ public class P2_Button : MonoBehaviour
         {
             for (int i = 0; i < buttons2.Count; i++)
             {
-                if (Input.GetKey(triangle))
+                if (Input.GetKeyDown(triangle))
                 {
                     //Debug.Log("Pressing triangle");
                     if (buttons2[i] != null)
@@ -38,11 +38,12 @@ public class P2_Button : MonoBehaviour
                             Destroy(buttons2[i].gameObject);
                             buttons2[i] = null;
                             Debug.Log("Hit");
+                            Streak.hitStreak += 1;
                         }
                     }
                 }
 
-                else if (Input.GetKey(square))
+                else if (Input.GetKeyDown(square))
                 {
                     //Debug.Log("Pressing square");
                     if (buttons2[i] != null)
@@ -53,11 +54,12 @@ public class P2_Button : MonoBehaviour
                             Destroy(buttons2[i].gameObject);
                             buttons2[i] = null;
                             Debug.Log("Hit");
+                            Streak.hitStreak += 1;
                         }
                     }
                 }
 
-                else if (Input.GetKey(circle))
+                else if (Input.GetKeyDown(circle))
                 {
                     //Debug.Log("Pressing circle");
                     if (buttons2[i] != null)
@@ -68,11 +70,12 @@ public class P2_Button : MonoBehaviour
                             Destroy(buttons2[i].gameObject);
                             buttons2[i] = null;
                             Debug.Log("Hit");
+                            Streak.hitStreak += 1;
                         }
                     }
                 }
 
-                else if (Input.GetKey(x))
+                else if (Input.GetKeyDown(x))
                 {
                     //Debug.Log("Pressing x");
                     if (buttons2[i] != null)
@@ -83,6 +86,7 @@ public class P2_Button : MonoBehaviour
                             Destroy(buttons2[i].gameObject);
                             buttons2[i] = null;
                             Debug.Log("Hit");
+                            Streak.hitStreak += 1;
                         }
                     }
                 }
