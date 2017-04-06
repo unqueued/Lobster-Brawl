@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MoveButton : MonoBehaviour {
 
-    float speed = 10f;
+    float speed = 7f;
     public bool inRange;
 
     private float x;
