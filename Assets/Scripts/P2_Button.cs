@@ -37,7 +37,6 @@ public class P2_Button : MonoBehaviour
                             buttons2[i].GetComponent<MoveButton>().hit = true;
                             Destroy(buttons2[i].gameObject);
                             buttons2[i] = null;
-                            Debug.Log("Hit");
                             Streak.hitStreak += 1;
                         }
                     }
@@ -53,7 +52,6 @@ public class P2_Button : MonoBehaviour
                             buttons2[i].GetComponent<MoveButton>().hit = true;
                             Destroy(buttons2[i].gameObject);
                             buttons2[i] = null;
-                            Debug.Log("Hit");
                             Streak.hitStreak += 1;
                         }
                     }
@@ -69,7 +67,6 @@ public class P2_Button : MonoBehaviour
                             buttons2[i].GetComponent<MoveButton>().hit = true;
                             Destroy(buttons2[i].gameObject);
                             buttons2[i] = null;
-                            Debug.Log("Hit");
                             Streak.hitStreak += 1;
                         }
                     }
@@ -85,7 +82,6 @@ public class P2_Button : MonoBehaviour
                             buttons2[i].GetComponent<MoveButton>().hit = true;
                             Destroy(buttons2[i].gameObject);
                             buttons2[i] = null;
-                            Debug.Log("Hit");
                             Streak.hitStreak += 1;
                         }
                     }
