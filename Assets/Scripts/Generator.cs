@@ -9,7 +9,6 @@ public class Generator : MonoBehaviour {
     public MoveButton circle;
     public MoveButton x;
 
-    float timer;
     List<MoveButton> buttons1 = new List<MoveButton>();
     List<MoveButton> buttons2 = new List<MoveButton>();
 

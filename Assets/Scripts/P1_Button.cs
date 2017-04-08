@@ -9,8 +9,15 @@ public class P1_Button : MonoBehaviour {
     public KeyCode circle;
     public KeyCode x;
 
+    /* for PS4 Controller
+    private KeyCode triangle = KeyCode.Joystick2Button3;
+    private KeyCode square = KeyCode.Joystick2Button0;
+    private KeyCode circle = KeyCode.Joystick2Button2;
+    private KeyCode x = KeyCode.Joystick2Button1;
+    */
+
     public Generator arr;
-    List<MoveButton> buttons1;
+    public List<MoveButton> buttons1;
 
     // Use this for initialization
     void Start () {

@@ -18,8 +18,7 @@ public class missBar : MonoBehaviour {
     {
         if (other.gameObject.tag == "Triangle" || other.gameObject.tag == "Square" || other.gameObject.tag == "Circle" || other.gameObject.tag == "X")
         {
-            //other.GetComponent<MoveButton>().miss = true;
-            //Debug.Log("Miss");
+            other.GetComponent<MoveButton>().miss = true;
             Destroy(other.gameObject);
         }
     }
