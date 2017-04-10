@@ -3,14 +3,13 @@ using System.Collections;
 
 public class MoveButton : MonoBehaviour {
 
-    float speed = 10f;
+    public float speed = 7f;
     public bool inRange;
 
     private float x;
     private float y;
 
-    public bool hit;
-    public bool miss;
+    public bool? isHit = null;
 
     // Use this for initialization
     void Start () {

@@ -10,8 +10,15 @@ public class P2_Button : MonoBehaviour
     public KeyCode circle;
     public KeyCode x;
 
+    /* for PS4 Controller
+    private KeyCode triangle = KeyCode.Joystick1Button3;
+    private KeyCode square = KeyCode.Joystick1Button0;
+    private KeyCode circle = KeyCode.Joystick1Button2;
+    private KeyCode x = KeyCode.Joystick1Button1;
+    */
+
     public Generator arr;
-    List<MoveButton> buttons2;
+    public List<MoveButton> buttons2;
 
     // Use this for initialization
     void Start()
@@ -34,10 +41,10 @@ public class P2_Button : MonoBehaviour
                     {
                         if (buttons2[i].inRange == true && buttons2[i].tag == "Triangle")
                         {
-                            buttons2[i].GetComponent<MoveButton>().hit = true;
-                            Destroy(buttons2[i].gameObject);
+                            buttons2[i].GetComponent<MoveButton>().isHit = true;
+                            buttons2[i].GetComponent<Renderer>().enabled = false;
+                            //Destroy(buttons2[i].gameObject);
                             buttons2[i] = null;
-                            Debug.Log("Hit");
                             Streak.hitStreak += 1;
                         }
                     }
@@ -50,10 +57,9 @@ public class P2_Button : MonoBehaviour
                     {
                         if (buttons2[i].inRange == true && buttons2[i].tag == "Square")
                         {
-                            buttons2[i].GetComponent<MoveButton>().hit = true;
-                            Destroy(buttons2[i].gameObject);
+                            buttons2[i].GetComponent<MoveButton>().isHit = true;
+                            buttons2[i].GetComponent<Renderer>().enabled = false;
                             buttons2[i] = null;
-                            Debug.Log("Hit");
                             Streak.hitStreak += 1;
                         }
                     }
@@ -66,10 +72,9 @@ public class P2_Button : MonoBehaviour
                     {
                         if (buttons2[i].inRange == true && buttons2[i].tag == "Circle")
                         {
-                            buttons2[i].GetComponent<MoveButton>().hit = true;
-                            Destroy(buttons2[i].gameObject);
+                            buttons2[i].GetComponent<MoveButton>().isHit = true;
+                            buttons2[i].GetComponent<Renderer>().enabled = false;
                             buttons2[i] = null;
-                            Debug.Log("Hit");
                             Streak.hitStreak += 1;
                         }
                     }
@@ -82,10 +87,9 @@ public class P2_Button : MonoBehaviour
                     {
                         if (buttons2[i].inRange == true && buttons2[i].tag == "X")
                         {
-                            buttons2[i].GetComponent<MoveButton>().hit = true;
-                            Destroy(buttons2[i].gameObject);
+                            buttons2[i].GetComponent<MoveButton>().isHit = true;
+                            buttons2[i].GetComponent<Renderer>().enabled = false;
                             buttons2[i] = null;
-                            Debug.Log("Hit");
                             Streak.hitStreak += 1;
                         }
                     }

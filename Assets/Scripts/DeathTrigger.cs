@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class DeathTrigger : MonoBehaviour
@@ -20,7 +19,9 @@ public class DeathTrigger : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
-            SceneManager.LoadScene("Button", LoadSceneMode.Single);
+		// Update to tags for each player instead of just Player
+		if (other.gameObject.CompareTag ("Player")) {
+			SceneManager.LoadScene("Button", LoadSceneMode.Single);
+		}
     }
 }

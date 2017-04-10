@@ -9,8 +9,15 @@ public class P1_Button : MonoBehaviour {
     public KeyCode circle;
     public KeyCode x;
 
+    /* for PS4 Controller
+    private KeyCode triangle = KeyCode.Joystick2Button3;
+    private KeyCode square = KeyCode.Joystick2Button0;
+    private KeyCode circle = KeyCode.Joystick2Button2;
+    private KeyCode x = KeyCode.Joystick2Button1;
+    */
+
     public Generator arr;
-    List<MoveButton> buttons1;
+    public List<MoveButton> buttons1;
 
     // Use this for initialization
     void Start () {
@@ -26,15 +33,14 @@ public class P1_Button : MonoBehaviour {
             {
                 if (Input.GetKeyDown(triangle))
                 {
-                    //Debug.Log("Pressing triangle");
                     if (buttons1[i] != null)
                     {
                         if (buttons1[i].inRange == true && buttons1[i].tag == "Triangle")
                         {
-                            //buttons1[i].GetComponent<MoveButton>().hit = true;
-                            Destroy(buttons1[i].gameObject);
+                            buttons1[i].GetComponent<MoveButton>().isHit = true;
+                            buttons1[i].GetComponent<Renderer>().enabled = false;
+                            //Destroy(buttons1[i].gameObject);
                             buttons1[i] = null;
-                            //Debug.Log("Hit");
                             Streak.hitStreak += 1;
                         }
                     }
@@ -42,15 +48,13 @@ public class P1_Button : MonoBehaviour {
 
                 else if (Input.GetKeyDown(square))
                 {
-                    //Debug.Log("Pressing square");
                     if (buttons1[i] != null)
                     {
                         if (buttons1[i].inRange == true && buttons1[i].tag == "Square")
                         {
-                            //buttons1[i].GetComponent<MoveButton>().hit = true;
-                            Destroy(buttons1[i].gameObject);
+                            buttons1[i].GetComponent<MoveButton>().isHit = true;
+                            buttons1[i].GetComponent<Renderer>().enabled = false;
                             buttons1[i] = null;
-                            //Debug.Log("Hit");
                             Streak.hitStreak += 1;
                         }
                     }
@@ -58,15 +62,13 @@ public class P1_Button : MonoBehaviour {
 
                 else if (Input.GetKeyDown(circle))
                 {
-                    //Debug.Log("Pressing circle");
                     if (buttons1[i] != null)
                     {
                         if (buttons1[i].inRange == true && buttons1[i].tag == "Circle")
                         {
-                            //buttons1[i].GetComponent<MoveButton>().hit = true;
-                            Destroy(buttons1[i].gameObject);
+                            buttons1[i].GetComponent<MoveButton>().isHit = true;
+                            buttons1[i].GetComponent<Renderer>().enabled = false;
                             buttons1[i] = null;
-                            //Debug.Log("Hit");
                             Streak.hitStreak += 1;
                         }
                     }
@@ -74,15 +76,13 @@ public class P1_Button : MonoBehaviour {
 
                 else if (Input.GetKeyDown(x))
                 {
-                    //Debug.Log("Pressing x");
                     if (buttons1[i] != null)
                     {
                         if (buttons1[i].inRange == true && buttons1[i].tag == "X")
                         {
-                            //buttons1[i].GetComponent<MoveButton>().hit = true;
-                            Destroy(buttons1[i].gameObject);
+                            buttons1[i].GetComponent<MoveButton>().isHit = true;
+                            buttons1[i].GetComponent<Renderer>().enabled = false;
                             buttons1[i] = null;
-                            //Debug.Log("Hit");
                             Streak.hitStreak += 1;
                         }
                     }
