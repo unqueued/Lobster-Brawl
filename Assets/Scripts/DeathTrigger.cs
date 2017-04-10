@@ -19,7 +19,9 @@ public class DeathTrigger : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
-            SceneManager.LoadScene("Button", LoadSceneMode.Single);
+		// Update to tags for each player instead of just Player
+		if (other.gameObject.CompareTag ("Player")) {
+			SceneManager.LoadScene("Button", LoadSceneMode.Single);
+		}
     }
 }
