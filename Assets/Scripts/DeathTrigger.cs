@@ -20,7 +20,7 @@ public class DeathTrigger : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
 		// Update to tags for each player instead of just Player
-		if (other.gameObject.CompareTag ("Player")) {
+		if (other.transform.parent != null && other.transform.parent.CompareTag ("Player")) {
 			SceneManager.LoadScene("Button", LoadSceneMode.Single);
 		}
     }

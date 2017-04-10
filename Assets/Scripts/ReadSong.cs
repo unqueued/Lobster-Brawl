@@ -33,7 +33,6 @@ public class ReadSong : MonoBehaviour
                 float time = (Mathf.Floor(playingAudio.time * 10) / 10) + 0.1f;
                 if (timeStampArr[index] == time)
                 {
-                    Debug.Log(timeStampArr[index] + "--" + time);
                     generator.make = true;
                     index++;
                 }
