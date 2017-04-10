@@ -45,9 +45,13 @@ public class Player1 : MonoBehaviour
     {
         myRigidbody.velocity = new Vector2(horizontal * movementSpeed, myRigidbody.velocity.y);
 
+		if (Input.GetKey (KeyCode.Alpha1)) {
+			Impulse ();
+		}
+			
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
-
             //Debug.Log ("Space detected");
             if (IsGrounded())
             {
@@ -59,6 +63,17 @@ public class Player1 : MonoBehaviour
             }
         }
     }
+
+	// Pushes player in direction that they are facing
+	private void Impulse() {
+		Debug.Log ("Impulse");
+		if (facingRight) {
+			myRigidbody.velocity = new Vector2 (-10, myRigidbody.velocity.y);
+		}
+		if(!facingRight) {
+			myRigidbody.velocity = new Vector2 (10, myRigidbody.velocity.y);
+		}
+	}
 
     private void Flip(float horizontal)
     {
