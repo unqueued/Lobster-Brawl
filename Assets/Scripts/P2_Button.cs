@@ -41,8 +41,9 @@ public class P2_Button : MonoBehaviour
                     {
                         if (buttons2[i].inRange == true && buttons2[i].tag == "Triangle")
                         {
-                            buttons2[i].GetComponent<MoveButton>().hit = true;
-                            Destroy(buttons2[i].gameObject);
+                            buttons2[i].GetComponent<MoveButton>().isHit = true;
+                            buttons2[i].GetComponent<Renderer>().enabled = false;
+                            //Destroy(buttons2[i].gameObject);
                             buttons2[i] = null;
                             Streak.hitStreak += 1;
                         }
@@ -56,8 +57,8 @@ public class P2_Button : MonoBehaviour
                     {
                         if (buttons2[i].inRange == true && buttons2[i].tag == "Square")
                         {
-                            buttons2[i].GetComponent<MoveButton>().hit = true;
-                            Destroy(buttons2[i].gameObject);
+                            buttons2[i].GetComponent<MoveButton>().isHit = true;
+                            buttons2[i].GetComponent<Renderer>().enabled = false;
                             buttons2[i] = null;
                             Streak.hitStreak += 1;
                         }
@@ -71,8 +72,8 @@ public class P2_Button : MonoBehaviour
                     {
                         if (buttons2[i].inRange == true && buttons2[i].tag == "Circle")
                         {
-                            buttons2[i].GetComponent<MoveButton>().hit = true;
-                            Destroy(buttons2[i].gameObject);
+                            buttons2[i].GetComponent<MoveButton>().isHit = true;
+                            buttons2[i].GetComponent<Renderer>().enabled = false;
                             buttons2[i] = null;
                             Streak.hitStreak += 1;
                         }
@@ -86,8 +87,8 @@ public class P2_Button : MonoBehaviour
                     {
                         if (buttons2[i].inRange == true && buttons2[i].tag == "X")
                         {
-                            buttons2[i].GetComponent<MoveButton>().hit = true;
-                            Destroy(buttons2[i].gameObject);
+                            buttons2[i].GetComponent<MoveButton>().isHit = true;
+                            buttons2[i].GetComponent<Renderer>().enabled = false;
                             buttons2[i] = null;
                             Streak.hitStreak += 1;
                         }

@@ -9,8 +9,7 @@ public class MoveButton : MonoBehaviour {
     private float x;
     private float y;
 
-    public bool hit;
-    public bool miss;
+    public bool? isHit = null;
 
     // Use this for initialization
     void Start () {
