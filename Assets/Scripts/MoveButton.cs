@@ -29,5 +29,11 @@ public class MoveButton : MonoBehaviour {
             x += speed * Time.deltaTime;
         }
         transform.position = new Vector3(x, y, 0);
+
+        if (isHit == true)
+        {
+            speed = 0f;
+            transform.position = new Vector3(x, 9.0f, 0);
+        }
     }
 }

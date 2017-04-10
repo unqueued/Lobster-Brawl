@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour {
         lvl2
     };
     public level current;
+    public bool next = false;
 
 	// Use this for initialization
 	void Start () {
@@ -36,5 +38,19 @@ public class GameManager : MonoBehaviour {
             textFile.setText(text2);
             soundFile.setSong(audio2);
         }
-	}
+
+        if (next == true)
+        {
+            if(current == level.lvl1)
+            {
+                SceneManager.LoadScene("round2", LoadSceneMode.Single);
+                current = level.lvl2;
+                next = false;
+            }
+            else if(current == level.lvl2)
+            {
+                next = false;
+            }
+        }
+    }
 }
