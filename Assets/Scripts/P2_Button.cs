@@ -44,8 +44,6 @@ public class P2_Button : MonoBehaviour
                             buttons2[i].GetComponent<MoveButton>().isHit = true;
                             buttons2[i].GetComponent<Renderer>().enabled = false;
                             //Destroy(buttons2[i].gameObject);
-                            buttons2[i] = null;
-                            Streak.hitStreak += 1;
                         }
                     }
                 }
@@ -59,8 +57,6 @@ public class P2_Button : MonoBehaviour
                         {
                             buttons2[i].GetComponent<MoveButton>().isHit = true;
                             buttons2[i].GetComponent<Renderer>().enabled = false;
-                            buttons2[i] = null;
-                            Streak.hitStreak += 1;
                         }
                     }
                 }
@@ -74,8 +70,6 @@ public class P2_Button : MonoBehaviour
                         {
                             buttons2[i].GetComponent<MoveButton>().isHit = true;
                             buttons2[i].GetComponent<Renderer>().enabled = false;
-                            buttons2[i] = null;
-                            Streak.hitStreak += 1;
                         }
                     }
                 }
@@ -89,8 +83,6 @@ public class P2_Button : MonoBehaviour
                         {
                             buttons2[i].GetComponent<MoveButton>().isHit = true;
                             buttons2[i].GetComponent<Renderer>().enabled = false;
-                            buttons2[i] = null;
-                            Streak.hitStreak += 1;
                         }
                     }
                 }
