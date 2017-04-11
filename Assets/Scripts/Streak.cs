@@ -29,10 +29,18 @@ public class Streak : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		if (listP1 == null || listP2 == null) {
+			return;
+		}
 
         hitListP1 = listP1.getList();
         hitListP2 = listP2.getList();
-        for(int i = 0; i < hitListP1.Count; i++)
+        
+		if (listP1.getList() == null || listP2.getList() == null) {
+			return;
+		}
+
+		for(int i = 0; i < hitListP1.Count; i++)
         {
             if (hitListP1[i].isHit == null)
             {
@@ -40,12 +48,12 @@ public class Streak : MonoBehaviour {
             }
             else if (hitListP1[i].isHit == true)
             {
-                Debug.Log("HIT");
+                //Debug.Log("HIT");
                 comboP1++;
             }
             else
             {
-                Debug.Log("Miss");
+                //Debug.Log("Miss");
                 int temp = comboP1;
                 if(temp > topComboP1)
                 {

@@ -54,11 +54,27 @@ public class Player2 : MonoBehaviour
 
     private void HandleInput()
     {
+
+		if (Input.GetKey (KeyCode.Alpha2)) {
+			Impulse ();
+		}
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             jump = true;
         }
     }
+
+	// Pushes player in direction that they are facing
+	private void Impulse() {
+		Debug.Log ("Impulse 2");
+		if (facingRight) {
+			myRigidbody.velocity = new Vector2 (-10, myRigidbody.velocity.y);
+		}
+		if(!facingRight) {
+			myRigidbody.velocity = new Vector2 (10, myRigidbody.velocity.y);
+		}
+	}
 
     private void Flip(float horizontal)
     {

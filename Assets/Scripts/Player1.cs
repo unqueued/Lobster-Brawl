@@ -26,6 +26,8 @@ public class Player1 : MonoBehaviour
     [SerializeField]
     private float jumpForce;
 
+	public Streak streak;
+
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
@@ -39,6 +41,12 @@ public class Player1 : MonoBehaviour
         HandleMovement(horizontal);
 
         Flip(horizontal);
+
+		//Debug.Log (streak.getComboP1 ());
+		if (streak.getComboP1 () != 0) {
+			Debug.Log ("Combo detected!");
+			Impulse ();
+		}
     }
 
     private void HandleMovement(float horizontal)
