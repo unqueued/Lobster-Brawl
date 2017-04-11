@@ -38,7 +38,7 @@ public class Player2 : MonoBehaviour
 
         HandleMovement(horizontal);
 
-        Flip(horizontal);
+        //Flip(horizontal);
     }
 
     private void HandleMovement(float horizontal)

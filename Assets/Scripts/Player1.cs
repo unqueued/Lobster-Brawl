@@ -40,7 +40,7 @@ public class Player1 : MonoBehaviour
 
         HandleMovement(horizontal);
 
-        Flip(horizontal);
+        //Flip(horizontal);
 
 		//Debug.Log (streak.getComboP1 ());
 		if (streak.getComboP1 () != 0) {
