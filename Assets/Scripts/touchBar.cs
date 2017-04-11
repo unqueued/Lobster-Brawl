@@ -16,6 +16,7 @@ public class touchBar : MonoBehaviour {
     //Check if button is touching bar line
     void OnTriggerStay2D(Collider2D other)
     {
+        //other.transform.parent.tag = "Button";
         if(other.gameObject.tag == "Triangle" || other.gameObject.tag == "Square" || other.gameObject.tag == "Circle" || other.gameObject.tag == "X")
         {
             //Debug.Log("inRange");

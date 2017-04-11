@@ -7,6 +7,7 @@ public class ReadSong : MonoBehaviour
     private AudioSource playingAudio;
     private bool play;
 
+    public GameManager manager;
     public Generator generator;
     public ReadText timeStamp;
     public List<float> timeStampArr;
@@ -41,6 +42,7 @@ public class ReadSong : MonoBehaviour
             else if (playingAudio.isPlaying == false)
             {
                 play = false;
+                manager.next = true;
             }
         }
     }

@@ -38,9 +38,7 @@ public class P1_Button : MonoBehaviour {
                         if (buttons1[i].inRange == true && buttons1[i].tag == "Triangle")
                         {
                             buttons1[i].GetComponent<MoveButton>().isHit = true;
-                            Debug.Log(buttons1[i].GetComponent<MoveButton>().isHit);
                             buttons1[i].GetComponent<Renderer>().enabled = false;
-                            //Destroy(buttons1[i].gameObject);
                         }
                     }
                 }
