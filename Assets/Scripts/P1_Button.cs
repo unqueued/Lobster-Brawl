@@ -4,10 +4,18 @@ using System.Collections.Generic;
 
 public class P1_Button : MonoBehaviour {
 
+	/*
     public KeyCode triangle;
     public KeyCode square;
     public KeyCode circle;
     public KeyCode x;
+    */
+
+	public KeyCode triangle = KeyCode.E;
+	public KeyCode square = KeyCode.R;
+	public KeyCode circle = KeyCode.T;
+	public KeyCode x = KeyCode.Y;
+
 
     /* for PS4 Controller
     private KeyCode triangle = KeyCode.Joystick2Button3;
