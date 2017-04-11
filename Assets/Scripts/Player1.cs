@@ -76,10 +76,10 @@ public class Player1 : MonoBehaviour
 	private void Impulse() {
 		Debug.Log ("Impulse");
 		if (facingRight) {
-			myRigidbody.velocity = new Vector2 (-10, myRigidbody.velocity.y);
+			myRigidbody.velocity = new Vector2 (-3, myRigidbody.velocity.y);
 		}
 		if(!facingRight) {
-			myRigidbody.velocity = new Vector2 (10, myRigidbody.velocity.y);
+			myRigidbody.velocity = new Vector2 (3, myRigidbody.velocity.y);
 		}
 	}
 
