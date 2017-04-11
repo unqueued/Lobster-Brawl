@@ -21,7 +21,7 @@ public class DeathTrigger : MonoBehaviour
     {
 		// Update to tags for each player instead of just Player
 		if (other.transform.parent != null && other.transform.parent.CompareTag ("Player")) {
-			SceneManager.LoadScene("Button", LoadSceneMode.Single);
+			SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
 		}
     }
 }
