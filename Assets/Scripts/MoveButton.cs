@@ -30,7 +30,7 @@ public class MoveButton : MonoBehaviour {
         }
         transform.position = new Vector3(x, y, 0);
 
-        if (isHit == true || isHit == false)
+        if (isHit == true)
         {
             speed = 0f;
             transform.position = new Vector3(x, 9.0f, 0);

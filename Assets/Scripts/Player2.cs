@@ -26,8 +26,6 @@ public class Player2 : MonoBehaviour
     [SerializeField]
     private float jumpForce;
 
-    public Streak streak;
-
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
@@ -41,21 +39,11 @@ public class Player2 : MonoBehaviour
         HandleMovement(horizontal);
 
         //Flip(horizontal);
-        if (streak.getComboP2() != 0)
-        {
-            Debug.Log("COmbo Detected");
-            Impulse();
-        }
     }
 
     private void HandleMovement(float horizontal)
     {
         myRigidbody.velocity = new Vector2(horizontal * movementSpeed, myRigidbody.velocity.y);
-
-        if (Input.GetKey(KeyCode.Alpha1))
-        {
-            Impulse();
-        }
 
         if (isGrounded && jump)
         {
@@ -81,10 +69,10 @@ public class Player2 : MonoBehaviour
 	private void Impulse() {
 		Debug.Log ("Impulse 2");
 		if (facingRight) {
-			myRigidbody.velocity = new Vector2 (3, myRigidbody.velocity.y);
+			myRigidbody.velocity = new Vector2 (-3, myRigidbody.velocity.y);
 		}
 		if(!facingRight) {
-			myRigidbody.velocity = new Vector2 (-3, myRigidbody.velocity.y);
+			myRigidbody.velocity = new Vector2 (3, myRigidbody.velocity.y);
 		}
 	}
 

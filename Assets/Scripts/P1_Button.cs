@@ -4,6 +4,26 @@ using System.Collections.Generic;
 
 public class P1_Button : MonoBehaviour {
 
+	/*
+    public KeyCode triangle;
+    public KeyCode square;
+    public KeyCode circle;
+    public KeyCode x;
+    */
+
+	public KeyCode triangle = KeyCode.E;
+	public KeyCode square = KeyCode.R;
+	public KeyCode circle = KeyCode.T;
+	public KeyCode x = KeyCode.Y;
+
+
+    /* for PS4 Controller
+    private KeyCode triangle = KeyCode.Joystick2Button3;
+    private KeyCode square = KeyCode.Joystick2Button0;
+    private KeyCode circle = KeyCode.Joystick2Button2;
+    private KeyCode x = KeyCode.Joystick2Button1;
+    */
+
     public Generator arr;
     public List<MoveButton> buttons1;
 
@@ -19,50 +39,51 @@ public class P1_Button : MonoBehaviour {
         {
             for (int i = 0; i < buttons1.Count; i++)
             {
-                if (buttons1[i] != null)
+                if (Input.GetKeyDown(triangle))
                 {
-                    if (Input.GetButtonDown("P1Triangle"))
+                    if (buttons1[i] != null)
                     {
-                        Debug.Log("Triangle");
                         if (buttons1[i].inRange == true && buttons1[i].tag == "Triangle")
                         {
-
                             buttons1[i].GetComponent<MoveButton>().isHit = true;
                             buttons1[i].GetComponent<Renderer>().enabled = false;
                         }
                     }
+                }
 
-                    else if (Input.GetButtonDown("P1Square"))
+                else if (Input.GetKeyDown(square))
+                {
+                    if (buttons1[i] != null)
                     {
-                        Debug.Log("Square");
                         if (buttons1[i].inRange == true && buttons1[i].tag == "Square")
                         {
                             buttons1[i].GetComponent<MoveButton>().isHit = true;
                             buttons1[i].GetComponent<Renderer>().enabled = false;
                         }
-
                     }
+                }
 
-                    else if (Input.GetButtonDown("P1Circle"))
+                else if (Input.GetKeyDown(circle))
+                {
+                    if (buttons1[i] != null)
                     {
-                        Debug.Log("Circle");
                         if (buttons1[i].inRange == true && buttons1[i].tag == "Circle")
                         {
                             buttons1[i].GetComponent<MoveButton>().isHit = true;
                             buttons1[i].GetComponent<Renderer>().enabled = false;
                         }
-
                     }
+                }
 
-                    else if (Input.GetButtonDown("P1X"))
+                else if (Input.GetKeyDown(x))
+                {
+                    if (buttons1[i] != null)
                     {
-                        Debug.Log("X");
                         if (buttons1[i].inRange == true && buttons1[i].tag == "X")
                         {
                             buttons1[i].GetComponent<MoveButton>().isHit = true;
                             buttons1[i].GetComponent<Renderer>().enabled = false;
                         }
-
                     }
                 }
             }//end of for loop

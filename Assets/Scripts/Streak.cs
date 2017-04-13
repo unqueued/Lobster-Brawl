@@ -48,10 +48,12 @@ public class Streak : MonoBehaviour {
             }
             else if (hitListP1[i].isHit == true)
             {
+                //Debug.Log("HIT");
                 comboP1++;
             }
             else
             {
+                //Debug.Log("Miss");
                 int temp = comboP1;
                 if(temp > topComboP1)
                 {
