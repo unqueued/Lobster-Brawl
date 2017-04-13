@@ -43,20 +43,21 @@ public class Player1 : MonoBehaviour
         //Flip(horizontal);
 
 		//Debug.Log (streak.getComboP1 ());
-		if (streak.getComboP1 () != 0) {
-			Debug.Log ("Combo detected!");
-			Impulse ();
-		}
+        if(streak.getComboP1() != 0)
+        {
+            Debug.Log("COmbo Detected");
+            Impulse();
+        }
     }
 
     private void HandleMovement(float horizontal)
     {
         myRigidbody.velocity = new Vector2(horizontal * movementSpeed, myRigidbody.velocity.y);
 
-		if (Input.GetKey (KeyCode.Alpha1)) {
-			Impulse ();
-		}
-			
+        if (Input.GetKey(KeyCode.Alpha1))
+        {
+            Impulse();
+        }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
