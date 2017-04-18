@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour {
             //method for clearing list for player 1& 2 is needed
             textFile.setText(text1);
             soundFile.setSong(audio1);
-        }
+        }/*
         else if(current == level.lvl2 && Input.GetKeyDown(KeyCode.Return))
         {
             //method for clearing list for player 1& 2 is needed
@@ -51,6 +51,6 @@ public class GameManager : MonoBehaviour {
             {
                 next = false;
             }
-        }
+        }*/
     }
 }
