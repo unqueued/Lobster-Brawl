@@ -13,11 +13,11 @@ public class GameManager : MonoBehaviour {
     public ReadSong soundFile;
 
     public enum level{
-        lvl1,
-        lvl2
+        lvl1
+        //,lvl2
     };
     public level current;
-    public bool next = false;
+    //public bool next = false;
 
 	// Use this for initialization
 	void Start () {
@@ -28,10 +28,9 @@ public class GameManager : MonoBehaviour {
 	void Update () {
         if(current == level.lvl1 && Input.GetKeyDown(KeyCode.Return))
         {
-            //method for clearing list for player 1& 2 is needed
             textFile.setText(text1);
             soundFile.setSong(audio1);
-        }
+        }/*
         else if(current == level.lvl2 && Input.GetKeyDown(KeyCode.Return))
         {
             //method for clearing list for player 1& 2 is needed
@@ -51,6 +50,6 @@ public class GameManager : MonoBehaviour {
             {
                 next = false;
             }
-        }
+        }*/
     }
 }
