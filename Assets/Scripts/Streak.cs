@@ -14,13 +14,6 @@ public class Streak : MonoBehaviour {
 
     public bool comboSpawn = false;
 
-    public P1_Button listP1;
-    public List<MoveButton> hitListP1;
-
-    public P2_Button listP2;
-    public List<MoveButton> hitListP2;
-
-
 	// Use this for initialization
 	void Start () {
 		
@@ -28,63 +21,40 @@ public class Streak : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-		if (listP1 == null || listP2 == null) {
-			return;
-		}
-
-        hitListP1 = listP1.getList();
-        hitListP2 = listP2.getList();
-        
-		if (listP1.getList() == null || listP2.getList() == null) {
-			return;
-		}
-
-		for(int i = 0; i < hitListP1.Count; i++)
-        {
-            if (hitListP1[i].isHit == null)
-            {
-                break;
-            }
-            else if (hitListP1[i].isHit == true)
-            {
-                //Debug.Log("HIT");
-                comboP1++;
-            }
-            else
-            {
-                //Debug.Log("Miss");
-                int temp = comboP1;
-                if(temp > topComboP1)
-                {
-                    topComboP1 = temp;
-                }
-                comboP1 = 0;
-            }
-            if (hitListP2[i].isHit == null)
-            {
-                break;
-            }
-            else if (hitListP2[i].isHit == true)
-            {
-                comboP2++;
-            }
-            else
-            {
-                int temp = comboP2;
-                if(temp > topComboP2)
-                {
-                    topComboP2 = temp;
-                }
-                comboP2 = 0;
-            }
-        }
-        if (((comboP1 == 5) || (comboP2 == 5))&& (comboSpawn == false))
+        if ((comboP1 == 5 || comboP2 == 5) && comboSpawn == false)
         {
             comboSpawn = true;
             // Instantiate( combo picture goes here, new Vector3 (location goes here), 
         }
 	}
+
+    public void P1Miss()
+    {
+        comboP1 = 0;
+    }
+
+    public void P2Miss()
+    {
+        comboP2 = 0;
+    }
+
+    public void P1Hit()
+    {
+        comboP1++;
+        if(comboP1 > topComboP1)
+        {
+            topComboP1 = comboP1;
+        }
+    }
+
+    public void P2Hit()
+    {
+        comboP2++;
+        if (comboP2 > topComboP2)
+        {
+            topComboP2 = comboP2;
+        }
+    }
 
     public int getComboP1()
     {

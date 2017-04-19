@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class missBar : MonoBehaviour {
+public class P1_Miss : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    public Streak combo;
+
+    // Use this for initialization
+    void Start () {
 	
 	}
 	
@@ -18,9 +20,11 @@ public class missBar : MonoBehaviour {
     {
         if (other.gameObject.tag == "Triangle" || other.gameObject.tag == "Square" || other.gameObject.tag == "Circle" || other.gameObject.tag == "X")
         {
-            other.GetComponent<MoveButton>().isHit = false;
-            other.GetComponent<Renderer>().enabled = false;
-            //Destroy(other.gameObject);
+            if(other != null)
+            {
+                combo.P1Miss();
+                Destroy(other.gameObject);
+            }
         }
     }
 }

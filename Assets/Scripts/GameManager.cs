@@ -5,12 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
+    //TimeStampe TextFile
     public TextAsset text1;
-    public TextAsset text2;
+    //public TextAsset text2;
     public ReadText textFile;
+
+    //Audio
     public AudioSource audio1;
-    public AudioSource audio2;
+    //public AudioSource audio2;
     public ReadSong soundFile;
+
 
     public enum level{
         lvl1
@@ -21,7 +25,7 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        //current = level.lvl1;
+        current = level.lvl1;
     }
 	
 	// Update is called once per frame
@@ -33,7 +37,6 @@ public class GameManager : MonoBehaviour {
         }/*
         else if(current == level.lvl2 && Input.GetKeyDown(KeyCode.Return))
         {
-            //method for clearing list for player 1& 2 is needed
             textFile.setText(text2);
             soundFile.setSong(audio2);
         }

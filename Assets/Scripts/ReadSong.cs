@@ -10,7 +10,7 @@ public class ReadSong : MonoBehaviour
     public GameManager manager;
     public Generator generator;
     public ReadText timeStamp;
-    public List<float> timeStampArr;
+    public float[] timeStampArr;
     int index = 0;
 
     // Use this for initialization
@@ -29,12 +29,11 @@ public class ReadSong : MonoBehaviour
 
         if (playingAudio != null)
         {
-            if (playingAudio.isPlaying && timeStampArr.Count != index)
+            if (playingAudio.isPlaying && timeStampArr.Length != index)
             {
                 float time = (Mathf.Floor(playingAudio.time * 10) / 10) + 0.1f;
                 if (timeStampArr[index] == time)
                 {
-                    //Debug.Log(timeStampArr[index] + "--" + time);
                     generator.make = true;
                     index++;
                 }
