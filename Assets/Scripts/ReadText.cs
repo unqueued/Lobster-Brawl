@@ -4,7 +4,7 @@ using System.Collections;
 public class ReadText : MonoBehaviour
 {
     private TextAsset textFile;
-    float[] timeStampArr;
+    private float[] timeStampArr;
 
     // Use this for initialization
     void Start()

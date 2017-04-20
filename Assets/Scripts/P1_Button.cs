@@ -10,12 +10,14 @@ public class P1_Button : MonoBehaviour {
 	public KeyCode x = KeyCode.Y;
     */
 
-    public Streak combo;
-    public Generator arr;
-    public List<MoveButton> buttons1;
+    private Streak combo;
+    private Generator arr;
+    private List<MoveButton> buttons1;
 
     // Use this for initialization
     void Start () {
+        combo = GameObject.Find("Combo").GetComponent<Streak>();
+        arr = GameObject.Find("Generator").GetComponent<Generator>();
         buttons1 = arr.getList1();
 	}
 	

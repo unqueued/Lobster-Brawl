@@ -7,15 +7,18 @@ public class ReadSong : MonoBehaviour
     private AudioSource playingAudio;
     private bool play;
 
-    public GameManager manager;
-    public Generator generator;
-    public ReadText timeStamp;
-    public float[] timeStampArr;
+    private GameManager manager;
+    private Generator generator;
+    private ReadText timeStamp;
+    private float[] timeStampArr;
     int index = 0;
 
     // Use this for initialization
     void Start()
     {
+        manager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        generator = GameObject.Find("Generator").GetComponent<Generator>();
+        timeStamp = GameObject.Find("TimeStamp").GetComponent<ReadText>();
     }
 
     // Update is called once per frame

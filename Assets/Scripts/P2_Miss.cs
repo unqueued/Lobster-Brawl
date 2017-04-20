@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class P2_Miss : MonoBehaviour {
 
-    public Streak combo;
+    private Streak combo;
 
     // Use this for initialization
     void Start()
     {
-
+        combo = GameObject.Find("Combo").GetComponent<Streak>();
     }
 
     // Update is called once per frame

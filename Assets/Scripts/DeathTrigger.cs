@@ -2,24 +2,19 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class DeathTrigger : MonoBehaviour
-{
+public class DeathTrigger : MonoBehaviour {
 
     // Use this for initialization
-    void Start()
-    {
+    void Start(){
 
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update(){
 
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-		// Update to tags for each player instead of just Player
+    void OnTriggerEnter2D(Collider2D other){ 
 		if (other.transform.parent != null && other.transform.parent.CompareTag ("Player")) {
 			SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
 		}

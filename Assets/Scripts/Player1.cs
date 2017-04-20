@@ -26,10 +26,11 @@ public class Player1 : MonoBehaviour
     [SerializeField]
     private float jumpForce;
 
-	public Streak streak;
+	private Streak streak;
 
     void Start()
     {
+        streak = GameObject.Find("Combo").GetComponent<Streak>();
         myRigidbody = this.gameObject.GetComponent<Rigidbody2D>();
     }
     void FixedUpdate()

@@ -4,13 +4,15 @@ using System.Collections.Generic;
 
 public class P2_Button : MonoBehaviour{
 
-    public Streak combo;
-    public Generator arr;
-    public List<MoveButton> buttons2;
+    private Streak combo;
+    private Generator arr;
+    private List<MoveButton> buttons2;
 
     // Use this for initialization
     void Start()
     {
+        combo = GameObject.Find("Combo").GetComponent<Streak>();
+        arr = GameObject.Find("Generator").GetComponent<Generator>();
         buttons2 = arr.getList2();
     }
 

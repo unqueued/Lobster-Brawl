@@ -9,8 +9,8 @@ public class Generator : MonoBehaviour {
     public MoveButton circle;
     public MoveButton x;
 
-    List<MoveButton> buttons1 = new List<MoveButton>();
-    List<MoveButton> buttons2 = new List<MoveButton>();
+    private List<MoveButton> buttons1 = new List<MoveButton>();
+    private List<MoveButton> buttons2 = new List<MoveButton>();
 
     public bool make = false;
 

@@ -8,12 +8,12 @@ public class GameManager : MonoBehaviour {
     //TimeStampe TextFile
     public TextAsset text1;
     //public TextAsset text2;
-    public ReadText textFile;
+    private ReadText textFile;
 
     //Audio
     public AudioSource audio1;
     //public AudioSource audio2;
-    public ReadSong soundFile;
+    private ReadSong soundFile;
 
 
     public enum level{
@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        textFile = GameObject.Find("TimeStamp").GetComponent<ReadText>();
+        soundFile = GameObject.Find("TimeStamp").GetComponent<ReadSong>();
         current = level.lvl1;
     }
 	

@@ -3,13 +3,11 @@ using System.Collections;
 
 public class MoveButton : MonoBehaviour {
 
-    public float speed = 3f;
+    private float speed = 3f;
     public bool inRange;
 
     private float x;
     private float y;
-
-    public bool? isHit = null;
 
     // Use this for initialization
     void Start () {
@@ -29,11 +27,5 @@ public class MoveButton : MonoBehaviour {
             x += speed * Time.deltaTime;
         }
         transform.position = new Vector3(x, y, 0);
-
-        if (isHit == true)
-        {
-            speed = 0f;
-            transform.position = new Vector3(x, 9.0f, 0);
-        }
     }
 }
