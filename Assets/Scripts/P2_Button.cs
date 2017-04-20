@@ -32,6 +32,10 @@ public class P2_Button : MonoBehaviour{
                             combo.P2Hit();
                             Destroy(buttons2[i].gameObject);
                         }
+                        else if (buttons2[i].inRange == true && buttons2[i].tag != "Triangle" || buttons2[i].inRange == false)
+                        {
+                            Debug.Log("Hitting Triangle, Button not Triangle");
+                        }
                     }
                 }
 
@@ -44,6 +48,10 @@ public class P2_Button : MonoBehaviour{
                         {
                             combo.P2Hit();
                             Destroy(buttons2[i].gameObject);
+                        }
+                        else if (buttons2[i].inRange == true && buttons2[i].tag != "Square" || buttons2[i].inRange == false)
+                        {
+                            Debug.Log("Hitting Square, Button not Square");
                         }
                     }
                 }
@@ -58,6 +66,10 @@ public class P2_Button : MonoBehaviour{
                             combo.P2Hit();
                             Destroy(buttons2[i].gameObject);
                         }
+                        else if (buttons2[i].inRange == true && buttons2[i].tag != "Circle" || buttons2[i].inRange == false)
+                        {
+                            Debug.Log("Hitting Circle, Button not Circle");
+                        }
                     }
                 }
 
@@ -70,6 +82,10 @@ public class P2_Button : MonoBehaviour{
                         {
                             combo.P2Hit();
                             Destroy(buttons2[i].gameObject);
+                        }
+                        else if (buttons2[i].inRange == true && buttons2[i].tag != "X" || buttons2[i].inRange == false)
+                        {
+                            Debug.Log("Hitting X, Button not X");
                         }
                     }
                 }

@@ -30,11 +30,11 @@ public class Player1 : MonoBehaviour
 
     void Start()
     {
-        myRigidbody = GetComponent<Rigidbody2D>();
+        myRigidbody = this.gameObject.GetComponent<Rigidbody2D>();
     }
     void FixedUpdate()
     {
-        float horizontal = Input.GetAxis("Horizontal");
+        float horizontal = Input.GetAxis("P1Horizontal");
 
         //isGrounded = IsGrounded();
 

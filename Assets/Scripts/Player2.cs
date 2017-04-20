@@ -28,7 +28,7 @@ public class Player2 : MonoBehaviour
 
     void Start()
     {
-        myRigidbody = GetComponent<Rigidbody2D>();
+        myRigidbody = this.gameObject.GetComponent<Rigidbody2D>();
     }
     void FixedUpdate()
     {
