@@ -77,6 +77,28 @@ public class P2_Meter : MonoBehaviour{
             }
         }
 
+        //One press use all power for jump
+        if (Input.GetButtonDown("P2L2"))
+        {
+            Debug.Log("Player 2 pressed L2");
+            if (powerLvl <= 0f)
+            {
+                usedPower = 0f;
+                return;
+            }
+            else
+            {
+                L2Pressed = true;
+                usedPower = powerLvl;
+                resetMeter();
+            }
+        }
+        else
+        {
+            L2Pressed = false;
+        }
+
+        /*
         //Could do: continue to press to use more power for jump
         if (Input.GetButton("P2L2"))
         {
@@ -97,7 +119,7 @@ public class P2_Meter : MonoBehaviour{
             Debug.Log("Player 2 let go of  L2");
             powerLvl = powerLvl - Mathf.Ceil(usedPower);
             usedPower = 0f;
-        }
+        }*/
 
     }
 
