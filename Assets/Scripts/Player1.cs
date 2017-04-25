@@ -27,10 +27,12 @@ public class Player1 : MonoBehaviour
     private float jumpForce;
 
 	private Streak streak;
+    private P1_Meter powerMeter;
 
     void Start()
     {
         streak = GameObject.Find("Combo").GetComponent<Streak>();
+        powerMeter = GameObject.Find("P1 Power Meter").GetComponent<P1_Meter>();
         myRigidbody = this.gameObject.GetComponent<Rigidbody2D>();
     }
     void FixedUpdate()
@@ -46,7 +48,7 @@ public class Player1 : MonoBehaviour
 		//Debug.Log (streak.getComboP1 ());
 		if (streak.getComboP1 () != 0) {
 			Debug.Log ("Combo detected!");
-			Impulse ();
+            Impulse();
 		}
     }
 
@@ -77,10 +79,10 @@ public class Player1 : MonoBehaviour
 	private void Impulse() {
 		Debug.Log ("Impulse");
 		if (facingRight) {
-			myRigidbody.velocity = new Vector2 (-2.5f, myRigidbody.velocity.y);
+			myRigidbody.velocity = new Vector2 (-1.5f, myRigidbody.velocity.y);
 		}
 		if(!facingRight) {
-			myRigidbody.velocity = new Vector2 (2.5f, myRigidbody.velocity.y);
+			myRigidbody.velocity = new Vector2 (1.5f, myRigidbody.velocity.y);
 		}
 	}
 

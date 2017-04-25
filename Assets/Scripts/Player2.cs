@@ -26,10 +26,16 @@ public class Player2 : MonoBehaviour
     [SerializeField]
     private float jumpForce;
 
+    private Streak streak;
+    private P2_Meter powerMeter;
+
     void Start()
     {
+        streak = GameObject.Find("Combo").GetComponent<Streak>();
+        powerMeter = GameObject.Find("P2 Power Meter").GetComponent<P2_Meter>();
         myRigidbody = this.gameObject.GetComponent<Rigidbody2D>();
     }
+
     void FixedUpdate()
     {
         float horizontal = Input.GetAxis("Player2Horizontal");
@@ -39,6 +45,13 @@ public class Player2 : MonoBehaviour
         HandleMovement(horizontal);
 
         //Flip(horizontal);
+
+        if (streak.getComboP2() != 0)
+        {
+            Debug.Log("Combo detected!");
+            Impulse();
+            
+        }
     }
 
     private void HandleMovement(float horizontal)
@@ -69,10 +82,10 @@ public class Player2 : MonoBehaviour
 	private void Impulse() {
 		Debug.Log ("Impulse 2");
 		if (facingRight) {
-			myRigidbody.velocity = new Vector2 (-2.5f, myRigidbody.velocity.y);
+			myRigidbody.velocity = new Vector2 (1.5f, myRigidbody.velocity.y);
 		}
 		if(!facingRight) {
-			myRigidbody.velocity = new Vector2 (2.5f, myRigidbody.velocity.y);
+			myRigidbody.velocity = new Vector2 (-1.5f, myRigidbody.velocity.y);
 		}
 	}
 
