@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Streak : MonoBehaviour{
 
-    private int comboP1 = 0;
+    public int comboP1 = 0;
     private int topComboP1 = 0;
 
-    private int comboP2 = 0;
+    public int comboP2 = 0;
     private int topComboP2 = 0;
 
     public Transform comboDisplay;

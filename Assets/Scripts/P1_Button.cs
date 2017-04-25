@@ -13,9 +13,11 @@ public class P1_Button : MonoBehaviour {
     private Streak combo;
     private Generator arr;
     private List<MoveButton> buttons1;
+    private P1_Meter powerMeter;
 
     // Use this for initialization
-    void Start () {
+    void Start() {
+        powerMeter = GameObject.Find("P1 Power Meter").GetComponent<P1_Meter>();
         combo = GameObject.Find("Combo").GetComponent<Streak>();
         arr = GameObject.Find("Generator").GetComponent<Generator>();
         buttons1 = arr.getList1();
@@ -36,11 +38,13 @@ public class P1_Button : MonoBehaviour {
                         {
                             //Debug.Log("Triangle");
                             combo.P1Hit();
+                            powerMeter.powerUp();
                             Destroy(buttons1[i].gameObject);
                         }
                         else if(buttons1[i].inRange == true && buttons1[i].tag != "Triangle" || buttons1[i].inRange == false)
                         {
                             Debug.Log("Hitting Triangle, Button not Triangle");
+                            combo.P1Miss();
                         }
                     }
                 }
@@ -52,11 +56,13 @@ public class P1_Button : MonoBehaviour {
                         if (buttons1[i].inRange == true && buttons1[i].tag == "Square")
                         {
                             combo.P1Hit();
+                            powerMeter.powerUp();
                             Destroy(buttons1[i].gameObject);
                         }
                         else if (buttons1[i].inRange == true && buttons1[i].tag != "Square" || buttons1[i].inRange == false)
                         {
                             Debug.Log("Hitting Square, Button not Square");
+                            combo.P1Miss();
                         }
                     }
                 }
@@ -68,11 +74,13 @@ public class P1_Button : MonoBehaviour {
                         if (buttons1[i].inRange == true && buttons1[i].tag == "Circle")
                         {
                             combo.P1Hit();
+                            powerMeter.powerUp();
                             Destroy(buttons1[i].gameObject);
                         }
                         else if (buttons1[i].inRange == true && buttons1[i].tag != "Circle" || buttons1[i].inRange == false)
                         {
                             Debug.Log("Hitting Circle, Button not Circle");
+                            combo.P1Miss();
                         }
                     }
                 }
@@ -84,11 +92,13 @@ public class P1_Button : MonoBehaviour {
                         if (buttons1[i].inRange == true && buttons1[i].tag == "X")
                         {
                             combo.P1Hit();
+                            powerMeter.powerUp();
                             Destroy(buttons1[i].gameObject);
                         }
                         else if (buttons1[i].inRange == true && buttons1[i].tag != "X" || buttons1[i].inRange == false)
                         {
                             Debug.Log("Hitting X, Button not X");
+                            combo.P1Miss();
                         }
                     }
                 }

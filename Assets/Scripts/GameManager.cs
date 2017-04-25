@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
@@ -15,6 +16,10 @@ public class GameManager : MonoBehaviour {
     //public AudioSource audio2;
     private ReadSong soundFile;
 
+    private int P1TopCombo;
+    private int P2TopCombo;
+    public Text P1Score;
+    public Text P2Score;
 
     public enum level{
         lvl1
@@ -32,7 +37,13 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(current == level.lvl1 && Input.GetKeyDown(KeyCode.Return))
+        P1TopCombo = GameObject.Find("Combo").GetComponent<Streak>().getTopComboP1();
+        P2TopCombo = GameObject.Find("Combo").GetComponent<Streak>().getTopComboP2();
+
+        P1Score.text = "Score " + P1TopCombo;
+        P2Score.text = "Score " + P2TopCombo;
+
+        if (current == level.lvl1 && Input.GetKeyDown(KeyCode.Return))
         {
             textFile.setText(text1);
             soundFile.setSong(audio1);
