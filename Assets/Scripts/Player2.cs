@@ -46,11 +46,9 @@ public class Player2 : MonoBehaviour
 
         //Flip(horizontal);
 
-        if (streak.getComboP2() != 0)
-        {
+        if (streak.getComboP2() != 0){
             Debug.Log("Combo detected!");
             Impulse();
-            
         }
     }
 

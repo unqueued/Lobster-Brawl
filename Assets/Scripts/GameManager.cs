@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -20,6 +19,9 @@ public class GameManager : MonoBehaviour {
     private int P2TopCombo;
     public Text P1Score;
     public Text P2Score;
+
+    public bool time = true;
+    public float timer = 3f;
 
     public enum level{
         lvl1
@@ -43,10 +45,17 @@ public class GameManager : MonoBehaviour {
         P1Score.text = "Score " + P1TopCombo;
         P2Score.text = "Score " + P2TopCombo;
 
-        if (current == level.lvl1 && Input.GetKeyDown(KeyCode.Return))
+        if(timer > 0f && time)
+        {
+            timer -= Time.deltaTime;
+        }
+
+        if (current == level.lvl1 && timer <= 0f)
         {
             textFile.setText(text1);
             soundFile.setSong(audio1);
+            time = false;
+            timer = 3f;
         }/*
         else if(current == level.lvl2 && Input.GetKeyDown(KeyCode.Return))
         {

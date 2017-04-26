@@ -21,6 +21,8 @@ public class Player1 : MonoBehaviour
     [SerializeField]
     private LayerMask whatIsGround;
 
+    private bool isGrounded;
+
     private bool jump;
 
     [SerializeField]
@@ -39,7 +41,7 @@ public class Player1 : MonoBehaviour
     {
         float horizontal = Input.GetAxis("P1Horizontal");
 
-        //isGrounded = IsGrounded();
+        isGrounded = IsGrounded();
 
         HandleMovement(horizontal);
 

@@ -28,7 +28,7 @@ public class P2_Button : MonoBehaviour{
             {
                 if (Input.GetButtonDown("P2Triangle"))
                 {
-                    Debug.Log("Pressing triangle");
+                    //Debug.Log("Pressing triangle");
                     if (buttons2[i] != null)
                     {
                         if (buttons2[i].inRange == true && buttons2[i].tag == "Triangle")
@@ -47,7 +47,7 @@ public class P2_Button : MonoBehaviour{
 
                 else if (Input.GetButtonDown("P2Square"))
                 {
-                    Debug.Log("Pressing square");
+                    //Debug.Log("Pressing square");
                     if (buttons2[i] != null)
                     {
                         if (buttons2[i].inRange == true && buttons2[i].tag == "Square")
@@ -66,7 +66,7 @@ public class P2_Button : MonoBehaviour{
 
                 else if (Input.GetButtonDown("P2Circle"))
                 {
-                    Debug.Log("Pressing circle");
+                    //Debug.Log("Pressing circle");
                     if (buttons2[i] != null)
                     {
                         if (buttons2[i].inRange == true && buttons2[i].tag == "Circle")
@@ -85,7 +85,7 @@ public class P2_Button : MonoBehaviour{
 
                 else if (Input.GetButtonDown("P2X"))
                 {
-                    Debug.Log("Pressing x");
+                    //Debug.Log("Pressing x");
                     if (buttons2[i] != null)
                     {
                         if (buttons2[i].inRange == true && buttons2[i].tag == "X")

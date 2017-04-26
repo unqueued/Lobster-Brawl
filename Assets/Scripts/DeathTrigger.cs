@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class DeathTrigger : MonoBehaviour {
 
+    float timer = 3f;
+
     // Use this for initialization
     void Start(){
 
@@ -14,9 +16,17 @@ public class DeathTrigger : MonoBehaviour {
 
     }
 
-    void OnTriggerEnter2D(Collider2D other){ 
-		if (other.transform.parent != null && other.transform.parent.CompareTag ("Player")) {
-			SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
-		}
+    void OnTriggerEnter2D(Collider2D other){
+        if (other.transform.parent != null && other.transform.parent.CompareTag("Player"))
+        {
+            if (timer <= 0f)
+            {
+                SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+            }
+            else
+            {
+                timer -= Time.deltaTime;
+            }
+        }
     }
 }
