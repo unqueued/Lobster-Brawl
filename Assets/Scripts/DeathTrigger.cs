@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class DeathTrigger : MonoBehaviour {
 
-    float timer = 3f;
+    //float timer = 3f;
 
     // Use this for initialization
     void Start(){
@@ -19,12 +19,22 @@ public class DeathTrigger : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D other){
         if (other.transform.parent != null && other.transform.parent.CompareTag("Player"))
         {
-            SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+            if(other.gameObject.name == "Player 1")
+            {
+                GameObject.Find("Game Manager").GetComponent<GameManager>().player2Win = true;
+            }
+            else if(other.gameObject.name == "Player 2")
+            {
+                GameObject.Find("Game Manager").GetComponent<GameManager>().player1Win = true;
+            }
+
+            GameObject.Find("Game Manager").GetComponent<GameManager>().end_pushed = true;
+            GameObject.Find("Game Manager").GetComponent<GameManager>().time = true;
+            GameObject.Find("Game Manager").GetComponent<GameManager>().current = GameManager.level.end;
+            SceneManager.LoadScene("victory screen", LoadSceneMode.Single);
             Destroy(GameObject.Find("Music Part"));
             Destroy(GameObject.Find("Players"));
-            Destroy(GameObject.Find("Game Manager"));
             Destroy(GameObject.Find("Death Triggers"));
-
         }
     }
 }
