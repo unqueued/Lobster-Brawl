@@ -56,7 +56,7 @@ public class Player1 : MonoBehaviour
 
     private void HandleMovement(float horizontal)
     {
-        myRigidbody.velocity = new Vector2(horizontal * movementSpeed, myRigidbody.velocity.y);
+        //myRigidbody.velocity = new Vector2(horizontal * movementSpeed, myRigidbody.velocity.y);
 
 		if (Input.GetKeyDown (KeyCode.Alpha1)) {
 			Impulse ();
