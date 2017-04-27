@@ -62,14 +62,20 @@ public class Player1 : MonoBehaviour
 			Impulse ();
 		}
 
+		if (Input.GetKeyDown (KeyCode.Alpha3)) {
+			Debug.Log ("isGrounded() " + isGrounded);
+		}
+
 
         if (Input.GetKeyDown(KeyCode.Space))
 		{
+			/*
             Debug.Log ("Space detected");
 			Debug.Log("Before: " + myRigidbody.position + " " + myRigidbody.velocity);
 			myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, myRigidbody.velocity.y + jumpHeight);
 			//myRigidbody.velocity = new Vector2(myRigidbody.velocity.x - 4.5f, myRigidbody.velocity.y);
 			Debug.Log("After: " + myRigidbody.position + " " + myRigidbody.velocity);
+			*/
 
             if (IsGrounded())
             {
@@ -77,10 +83,12 @@ public class Player1 : MonoBehaviour
             }
             else
             {
-                //Debug.Log ("Did not jump, because no grounded");
+                Debug.Log ("Did not jump, because no grounded");
             }
         }
     }
+
+	// TODO make sure to only let impulse if grounded
 
 	// Pushes player in direction that they are facing
 	private void Impulse() {
@@ -141,8 +149,8 @@ public class Player1 : MonoBehaviour
 				//30f,
                 //-50,
                 //myRigidbody.velocity.x,
-				-10f,
-				5f
+				-3f,
+				3f
                 //-30
             	//myRigidbody.velocity.y
             );
@@ -164,6 +172,7 @@ public class Player1 : MonoBehaviour
         }
     }
 
+	// TODO make sure to add mroe ground points!
     private bool IsGrounded()
     {
         if (myRigidbody.velocity.y <= 0)
@@ -181,5 +190,6 @@ public class Player1 : MonoBehaviour
             }
         }
         return false;
+        
     }
 }
