@@ -85,7 +85,7 @@ public class Player2 : MonoBehaviour
 
 	// Pushes player in direction that they are facing
 	private void Impulse() {
-		Debug.Log ("Impulse 2");
+		//Debug.Log ("Impulse 2");
 		if (facingRight) {
 			myRigidbody.velocity = new Vector2 (1.5f, myRigidbody.velocity.y);
 		}

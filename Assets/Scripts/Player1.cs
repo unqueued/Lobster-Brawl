@@ -58,14 +58,19 @@ public class Player1 : MonoBehaviour
     {
         myRigidbody.velocity = new Vector2(horizontal * movementSpeed, myRigidbody.velocity.y);
 
-		if (Input.GetKey (KeyCode.Alpha1)) {
+		if (Input.GetKeyDown (KeyCode.Alpha1)) {
 			Impulse ();
 		}
-			
+
 
         if (Input.GetKeyDown(KeyCode.Space))
-        {
-            //Debug.Log ("Space detected");
+		{
+            Debug.Log ("Space detected");
+			Debug.Log("Before: " + myRigidbody.position + " " + myRigidbody.velocity);
+			myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, myRigidbody.velocity.y + jumpHeight);
+			//myRigidbody.velocity = new Vector2(myRigidbody.velocity.x - 4.5f, myRigidbody.velocity.y);
+			Debug.Log("After: " + myRigidbody.position + " " + myRigidbody.velocity);
+
             if (IsGrounded())
             {
                 Jump();
@@ -79,12 +84,21 @@ public class Player1 : MonoBehaviour
 
 	// Pushes player in direction that they are facing
 	private void Impulse() {
-		Debug.Log ("Impulse");
+		//Debug.Log ("Impulse 1");
 		if (facingRight) {
+			//Debug.Log ("Right");
 			myRigidbody.velocity = new Vector2 (-1.5f, myRigidbody.velocity.y);
 		}
 		if(!facingRight) {
+			//Debug.Log ("Left");
+			Debug.Log("Impulse");
+			Debug.Log("Before: " + myRigidbody.position + " " + myRigidbody.velocity);
 			myRigidbody.velocity = new Vector2 (1.5f, myRigidbody.velocity.y);
+			Debug.Log("After: " + myRigidbody.position + " " + myRigidbody.velocity);
+
+			var p = GameObject.Find ("Player2");
+			//Debug.Log ("Player: " + p);
+			//p.impulse ();
 		}
 	}
 
@@ -109,7 +123,7 @@ public class Player1 : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        //Debug.Log ("Collision detected, tag: " + coll.gameObject.tag);
+        Debug.Log ("Collision detected, tag: " + coll.gameObject.tag);
         //if (coll.gameObject.tag == "Enemy")
         //	coll.gameObject.SendMessage ("ApplyDamage", 10);
 
@@ -124,10 +138,13 @@ public class Player1 : MonoBehaviour
 
             myRigidbody.velocity = new Vector2(
                 //-(myRigidbody.velocity.x * 5),
+				//30f,
                 //-50,
-                myRigidbody.velocity.x,
-                10
-            //myRigidbody.velocity.y
+                //myRigidbody.velocity.x,
+				-10f,
+				5f
+                //-30
+            	//myRigidbody.velocity.y
             );
 
             Debug.Log("After: " + myRigidbody.position + " " + myRigidbody.velocity);
