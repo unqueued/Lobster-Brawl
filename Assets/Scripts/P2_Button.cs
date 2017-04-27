@@ -36,6 +36,10 @@ public class P2_Button : MonoBehaviour{
                             powerMeter.powerUp();
                             Destroy(buttons2[i].gameObject);
                         }
+                        else if ((buttons2[i].inRange == false && buttons2[i].tag == "Triangle") || (buttons2[i].inRange == true && buttons2[i].tag != "Triangle"))
+                        {
+                            combo.P2Miss();
+                        }
                     }
                 }
 
@@ -48,6 +52,10 @@ public class P2_Button : MonoBehaviour{
                             combo.P2Hit();
                             powerMeter.powerUp();
                             Destroy(buttons2[i].gameObject);
+                        }
+                        else if ((buttons2[i].inRange == false && buttons2[i].tag == "Square") || (buttons2[i].inRange == true && buttons2[i].tag != "Square"))
+                        {
+                            combo.P2Miss();
                         }
                     }
                 }
@@ -62,6 +70,10 @@ public class P2_Button : MonoBehaviour{
                             powerMeter.powerUp();
                             Destroy(buttons2[i].gameObject);
                         }
+                        else if ((buttons2[i].inRange == false && buttons2[i].tag == "Circle") || (buttons2[i].inRange == true && buttons2[i].tag != "Circle"))
+                        {
+                            combo.P2Miss();
+                        }
                     }
                 }
 
@@ -74,6 +86,10 @@ public class P2_Button : MonoBehaviour{
                             combo.P2Hit();
                             powerMeter.powerUp();
                             Destroy(buttons2[i].gameObject);
+                        }
+                        else if ((buttons2[i].inRange == false && buttons2[i].tag == "X") || (buttons2[i].inRange == true && buttons2[i].tag != "X"))
+                        {
+                            combo.P2Miss();
                         }
                     }
                 }

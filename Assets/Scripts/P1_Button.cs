@@ -34,6 +34,10 @@ public class P1_Button : MonoBehaviour {
                             powerMeter.powerUp();
                             Destroy(buttons1[i].gameObject);
                         }
+                        else if((buttons1[i].inRange == false && buttons1[i].tag == "Triangle") || (buttons1[i].inRange==true && buttons1[i].tag != "Triangle"))
+                        {
+                            combo.P1Miss();
+                        }
                     }
                 }
 
@@ -46,6 +50,10 @@ public class P1_Button : MonoBehaviour {
                             combo.P1Hit();
                             powerMeter.powerUp();
                             Destroy(buttons1[i].gameObject);
+                        }
+                        else if ((buttons1[i].inRange == false && buttons1[i].tag == "Square") || (buttons1[i].inRange == true && buttons1[i].tag != "Square"))
+                        {
+                            combo.P1Miss();
                         }
                     }
                 }
@@ -60,6 +68,10 @@ public class P1_Button : MonoBehaviour {
                             powerMeter.powerUp();
                             Destroy(buttons1[i].gameObject);
                         }
+                        else if ((buttons1[i].inRange == false && buttons1[i].tag == "Circle") || (buttons1[i].inRange == true && buttons1[i].tag != "Circle"))
+                        {
+                            combo.P1Miss();
+                        }
                     }
                 }
 
@@ -72,6 +84,10 @@ public class P1_Button : MonoBehaviour {
                             combo.P1Hit();
                             powerMeter.powerUp();
                             Destroy(buttons1[i].gameObject);
+                        }
+                        else if ((buttons1[i].inRange == false && buttons1[i].tag == "X") || (buttons1[i].inRange == true && buttons1[i].tag != "X"))
+                        {
+                            combo.P1Miss();
                         }
                     }
                 }

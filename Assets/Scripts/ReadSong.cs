@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class ReadSong : MonoBehaviour
 {
@@ -41,13 +42,19 @@ public class ReadSong : MonoBehaviour
                     index++;
                 }
                 if(time > (timeStampArr[index] + 10f)){
-                    playingAudio.Pause();
+                    playingAudio.Stop();
                 }
             }
             else if (playingAudio.isPlaying == false)
             {
                 play = false;
                 manager.end = true;
+                manager.time = true;
+                manager.current = GameManager.level.end;
+                SceneManager.LoadScene("victory screen", LoadSceneMode.Single);
+                Destroy(GameObject.Find("Music Part"));
+                Destroy(GameObject.Find("Players"));
+                Destroy(GameObject.Find("Death Triggers"));
             }
         }
     }
