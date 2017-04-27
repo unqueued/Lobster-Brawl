@@ -56,6 +56,11 @@ public class Player2 : MonoBehaviour
     {
         myRigidbody.velocity = new Vector2(horizontal * movementSpeed, myRigidbody.velocity.y);
 
+
+		if (Input.GetKey (KeyCode.Alpha2)) {
+			Impulse ();
+		}
+
         if (isGrounded && jump)
         {
             isGrounded = false;
@@ -63,6 +68,7 @@ public class Player2 : MonoBehaviour
         }
     }
 
+	/*
     private void HandleInput()
     {
 
@@ -75,6 +81,7 @@ public class Player2 : MonoBehaviour
             jump = true;
         }
     }
+    */
 
 	// Pushes player in direction that they are facing
 	private void Impulse() {
