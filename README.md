@@ -1,15 +1,13 @@
 # Lobster-Brawl
 Game Design Course - Group Project
 
-Using keyboard input mapping for control pads
-Player 1:  
-E - Square  
-R - Triangle  
-T - Circle  
-Y - X  
-
-Player2:  
-TBD
+PS4 Controller:
+Triangle: Joystick button 3
+Square: Joystick button 0
+Circle: Joystick button 2
+X: Joystick button 1
+L2: Joystick button 6
+R2: Joystick button 7
 
 OSX:  
 [https://yukkurigames.com/enjoyable/](https://yukkurigames.com/enjoyable/)
