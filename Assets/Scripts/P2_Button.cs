@@ -28,7 +28,6 @@ public class P2_Button : MonoBehaviour{
             {
                 if (Input.GetButtonDown("P2Triangle"))
                 {
-                    //Debug.Log("Pressing triangle");
                     if (buttons2[i] != null)
                     {
                         if (buttons2[i].inRange == true && buttons2[i].tag == "Triangle")
@@ -37,17 +36,11 @@ public class P2_Button : MonoBehaviour{
                             powerMeter.powerUp();
                             Destroy(buttons2[i].gameObject);
                         }
-                        else if (buttons2[i].inRange == true && buttons2[i].tag != "Triangle" || buttons2[i].inRange == false)
-                        {
-                            Debug.Log("Hitting Triangle, Button not Triangle");
-                            combo.P1Miss();
-                        }
                     }
                 }
 
                 else if (Input.GetButtonDown("P2Square"))
                 {
-                    //Debug.Log("Pressing square");
                     if (buttons2[i] != null)
                     {
                         if (buttons2[i].inRange == true && buttons2[i].tag == "Square")
@@ -56,17 +49,11 @@ public class P2_Button : MonoBehaviour{
                             powerMeter.powerUp();
                             Destroy(buttons2[i].gameObject);
                         }
-                        else if (buttons2[i].inRange == true && buttons2[i].tag != "Square" || buttons2[i].inRange == false)
-                        {
-                            Debug.Log("Hitting Square, Button not Square");
-                            combo.P1Miss();
-                        }
                     }
                 }
 
                 else if (Input.GetButtonDown("P2Circle"))
                 {
-                    //Debug.Log("Pressing circle");
                     if (buttons2[i] != null)
                     {
                         if (buttons2[i].inRange == true && buttons2[i].tag == "Circle")
@@ -75,17 +62,11 @@ public class P2_Button : MonoBehaviour{
                             powerMeter.powerUp();
                             Destroy(buttons2[i].gameObject);
                         }
-                        else if (buttons2[i].inRange == true && buttons2[i].tag != "Circle" || buttons2[i].inRange == false)
-                        {
-                            Debug.Log("Hitting Circle, Button not Circle");
-                            combo.P1Miss();
-                        }
                     }
                 }
 
                 else if (Input.GetButtonDown("P2X"))
                 {
-                    //Debug.Log("Pressing x");
                     if (buttons2[i] != null)
                     {
                         if (buttons2[i].inRange == true && buttons2[i].tag == "X")
@@ -93,11 +74,6 @@ public class P2_Button : MonoBehaviour{
                             combo.P2Hit();
                             powerMeter.powerUp();
                             Destroy(buttons2[i].gameObject);
-                        }
-                        else if (buttons2[i].inRange == true && buttons2[i].tag != "X" || buttons2[i].inRange == false)
-                        {
-                            Debug.Log("Hitting X, Button not X");
-                            combo.P1Miss();
                         }
                     }
                 }

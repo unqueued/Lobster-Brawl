@@ -19,14 +19,12 @@ public class DeathTrigger : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D other){
         if (other.transform.parent != null && other.transform.parent.CompareTag("Player"))
         {
-            if (timer <= 0f)
-            {
-                SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
-            }
-            else
-            {
-                timer -= Time.deltaTime;
-            }
+            SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+            Destroy(GameObject.Find("Music Part"));
+            Destroy(GameObject.Find("Players"));
+            Destroy(GameObject.Find("Game Manager"));
+            Destroy(GameObject.Find("Death Triggers"));
+
         }
     }
 }

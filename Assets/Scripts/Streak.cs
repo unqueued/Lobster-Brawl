@@ -10,8 +10,6 @@ public class Streak : MonoBehaviour{
     public int comboP2 = 0;
     private int topComboP2 = 0;
 
-    public Transform comboDisplay;
-
     public bool P1comboSpawn = false;
     public bool P2comboSpawn = false;
 

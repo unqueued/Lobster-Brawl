@@ -3,12 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class P1_Button : MonoBehaviour {
-    /*
-	public KeyCode triangle = KeyCode.E;
-	public KeyCode square = KeyCode.R;
-	public KeyCode circle = KeyCode.T;
-	public KeyCode x = KeyCode.Y;
-    */
 
     private Streak combo;
     private Generator arr;
@@ -36,15 +30,9 @@ public class P1_Button : MonoBehaviour {
                     {
                         if (buttons1[i].inRange == true && buttons1[i].tag == "Triangle")
                         {
-                            //Debug.Log("Triangle");
                             combo.P1Hit();
                             powerMeter.powerUp();
                             Destroy(buttons1[i].gameObject);
-                        }
-                        else if(buttons1[i].inRange == true && buttons1[i].tag != "Triangle" || buttons1[i].inRange == false)
-                        {
-                            Debug.Log("Hitting Triangle, Button not Triangle");
-                            combo.P1Miss();
                         }
                     }
                 }
@@ -59,11 +47,6 @@ public class P1_Button : MonoBehaviour {
                             powerMeter.powerUp();
                             Destroy(buttons1[i].gameObject);
                         }
-                        else if (buttons1[i].inRange == true && buttons1[i].tag != "Square" || buttons1[i].inRange == false)
-                        {
-                            Debug.Log("Hitting Square, Button not Square");
-                            combo.P1Miss();
-                        }
                     }
                 }
 
@@ -77,11 +60,6 @@ public class P1_Button : MonoBehaviour {
                             powerMeter.powerUp();
                             Destroy(buttons1[i].gameObject);
                         }
-                        else if (buttons1[i].inRange == true && buttons1[i].tag != "Circle" || buttons1[i].inRange == false)
-                        {
-                            Debug.Log("Hitting Circle, Button not Circle");
-                            combo.P1Miss();
-                        }
                     }
                 }
 
@@ -94,11 +72,6 @@ public class P1_Button : MonoBehaviour {
                             combo.P1Hit();
                             powerMeter.powerUp();
                             Destroy(buttons1[i].gameObject);
-                        }
-                        else if (buttons1[i].inRange == true && buttons1[i].tag != "X" || buttons1[i].inRange == false)
-                        {
-                            Debug.Log("Hitting X, Button not X");
-                            combo.P1Miss();
                         }
                     }
                 }
