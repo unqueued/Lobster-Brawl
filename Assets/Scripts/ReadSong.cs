@@ -41,9 +41,10 @@ public class ReadSong : MonoBehaviour
                     generator.make = true;
                     index++;
                 }
-                if(time > (timeStampArr[index] + 10f)){
+                if(time > (timeStampArr[index] + 1000f)){
                     playingAudio.Stop();
                 }
+                Debug.Log(time + " -- " + timeStampArr[index]);
             }
             else if (playingAudio.isPlaying == false)
             {
