@@ -28,13 +28,12 @@ public class DeathTrigger : MonoBehaviour {
                 GameObject.Find("Game Manager").GetComponent<GameManager>().player1Win = true;
             }
 
-            GameObject.Find("Game Manager").GetComponent<GameManager>().end_pushed = true;
-            GameObject.Find("Game Manager").GetComponent<GameManager>().time = true;
-            GameObject.Find("Game Manager").GetComponent<GameManager>().current = GameManager.level.end;
-            SceneManager.LoadScene("victory screen", LoadSceneMode.Single);
             Destroy(GameObject.Find("Music Part"));
             Destroy(GameObject.Find("Players"));
             Destroy(GameObject.Find("Death Triggers"));
+            GameObject.Find("Game Manager").GetComponent<GameManager>().end_pushed = true;
+            GameObject.Find("Game Manager").GetComponent<GameManager>().time = true;
+            GameObject.Find("Game Manager").GetComponent<GameManager>().current = GameManager.level.end;
         }
     }
 }

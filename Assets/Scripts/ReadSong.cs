@@ -44,7 +44,6 @@ public class ReadSong : MonoBehaviour
                 if(time > (timeStampArr[index] + 1000f)){
                     playingAudio.Stop();
                 }
-                Debug.Log(time + " -- " + timeStampArr[index]);
             }
             else if (playingAudio.isPlaying == false)
             {
@@ -52,7 +51,6 @@ public class ReadSong : MonoBehaviour
                 manager.end = true;
                 manager.time = true;
                 manager.current = GameManager.level.end;
-                SceneManager.LoadScene("victory screen", LoadSceneMode.Single);
                 Destroy(GameObject.Find("Music Part"));
                 Destroy(GameObject.Find("Players"));
                 Destroy(GameObject.Find("Death Triggers"));

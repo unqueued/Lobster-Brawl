@@ -35,6 +35,7 @@ public class P2_Button : MonoBehaviour{
                             combo.P2Hit();
                             powerMeter.powerUp();
                             Destroy(buttons2[i].gameObject);
+                            return;
                         }
                         else if ((buttons2[i].inRange == false && buttons2[i].tag == "Triangle") || (buttons2[i].inRange == true && buttons2[i].tag != "Triangle"))
                         {
@@ -52,6 +53,7 @@ public class P2_Button : MonoBehaviour{
                             combo.P2Hit();
                             powerMeter.powerUp();
                             Destroy(buttons2[i].gameObject);
+                            return;
                         }
                         else if ((buttons2[i].inRange == false && buttons2[i].tag == "Square") || (buttons2[i].inRange == true && buttons2[i].tag != "Square"))
                         {
@@ -69,6 +71,7 @@ public class P2_Button : MonoBehaviour{
                             combo.P2Hit();
                             powerMeter.powerUp();
                             Destroy(buttons2[i].gameObject);
+                            return;
                         }
                         else if ((buttons2[i].inRange == false && buttons2[i].tag == "Circle") || (buttons2[i].inRange == true && buttons2[i].tag != "Circle"))
                         {
@@ -86,6 +89,7 @@ public class P2_Button : MonoBehaviour{
                             combo.P2Hit();
                             powerMeter.powerUp();
                             Destroy(buttons2[i].gameObject);
+                            return;
                         }
                         else if ((buttons2[i].inRange == false && buttons2[i].tag == "X") || (buttons2[i].inRange == true && buttons2[i].tag != "X"))
                         {
