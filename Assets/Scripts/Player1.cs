@@ -58,6 +58,11 @@ public class Player1 : MonoBehaviour
     {
         myRigidbody.velocity = new Vector2(horizontal * movementSpeed, myRigidbody.velocity.y);
 
+		//Simulate P1R2 powerup
+		if (Input.GetKey (KeyCode.Alpha3)) {
+			powerMeter.DebugForceP1R2Combo ();
+		}
+
 		if (Input.GetKey (KeyCode.Alpha1)) {
 			Impulse ();
 		}
