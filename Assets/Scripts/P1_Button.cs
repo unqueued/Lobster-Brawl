@@ -9,6 +9,12 @@ public class P1_Button : MonoBehaviour {
     private List<MoveButton> buttons1;
     private P1_Meter powerMeter;
 
+    public Animator TriangleAnimations;
+    public Animator SquareAnimations;
+    public Animator CircleAnimations;
+    public Animator XAnimations;
+    public Animator ComboAnimations;
+
     // Use this for initialization
     void Start() {
         powerMeter = GameObject.Find("P1 Power Meter").GetComponent<P1_Meter>();
@@ -33,11 +39,12 @@ public class P1_Button : MonoBehaviour {
                             combo.P1Hit();
                             powerMeter.powerUp();
                             Destroy(buttons1[i].gameObject);
+                            TriangleAnimations.Play("Triangle Hit");
                         }
-                        else if((buttons1[i].inRange == false && buttons1[i].tag == "Triangle") || (buttons1[i].inRange==true && buttons1[i].tag != "Triangle"))
+                        /*else if((buttons1[i].inRange == false && buttons1[i].tag == "Triangle") || (buttons1[i].inRange==true && buttons1[i].tag != "Triangle"))
                         {
                             combo.P1Miss();
-                        }
+                        }*/
                     }
                 }
 
@@ -50,11 +57,12 @@ public class P1_Button : MonoBehaviour {
                             combo.P1Hit();
                             powerMeter.powerUp();
                             Destroy(buttons1[i].gameObject);
+                            SquareAnimations.Play("Square Hit");
                         }
-                        else if ((buttons1[i].inRange == false && buttons1[i].tag == "Square") || (buttons1[i].inRange == true && buttons1[i].tag != "Square"))
+                        /*else if ((buttons1[i].inRange == false && buttons1[i].tag == "Square") || (buttons1[i].inRange == true && buttons1[i].tag != "Square"))
                         {
                             combo.P1Miss();
-                        }
+                        }*/
                     }
                 }
 
@@ -67,11 +75,12 @@ public class P1_Button : MonoBehaviour {
                             combo.P1Hit();
                             powerMeter.powerUp();
                             Destroy(buttons1[i].gameObject);
+                            CircleAnimations.Play("Circle Hit");
                         }
-                        else if ((buttons1[i].inRange == false && buttons1[i].tag == "Circle") || (buttons1[i].inRange == true && buttons1[i].tag != "Circle"))
+                        /*else if ((buttons1[i].inRange == false && buttons1[i].tag == "Circle") || (buttons1[i].inRange == true && buttons1[i].tag != "Circle"))
                         {
                             combo.P1Miss();
-                        }
+                        }*/
                     }
                 }
 
@@ -84,11 +93,12 @@ public class P1_Button : MonoBehaviour {
                             combo.P1Hit();
                             powerMeter.powerUp();
                             Destroy(buttons1[i].gameObject);
+                            XAnimations.Play("X Hit");
                         }
-                        else if ((buttons1[i].inRange == false && buttons1[i].tag == "X") || (buttons1[i].inRange == true && buttons1[i].tag != "X"))
+                        /*else if ((buttons1[i].inRange == false && buttons1[i].tag == "X") || (buttons1[i].inRange == true && buttons1[i].tag != "X"))
                         {
                             combo.P1Miss();
-                        }
+                        }*/
                     }
                 }
             }//end of for loop

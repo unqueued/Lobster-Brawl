@@ -1,9 +1,29 @@
 fileFormatVersion: 2
 guid: ebb93889f978ef640ac3467482f51da1
-timeCreated: 1492555661
+timeCreated: 1493743779
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: glowing combo numbers_0
+    21300002: glowing combo numbers_1
+    21300004: glowing combo numbers_2
+    21300006: glowing combo numbers_3
+    21300008: glowing combo numbers_4
+    21300010: glowing combo numbers_5
+    21300012: glowing combo numbers_6
+    21300014: glowing combo numbers_7
+    21300016: glowing combo numbers_8
+    21300018: glowing combo numbers_9
+    21300020: glowing combo numbers_10
+    21300022: glowing combo numbers_11
+    21300024: glowing combo numbers_12
+    21300026: glowing combo numbers_13
+    21300028: glowing combo numbers_14
+    21300030: glowing combo numbers_15
+    21300032: glowing combo numbers_16
+    21300034: glowing combo numbers_17
+    21300036: glowing combo numbers_18
+    21300038: glowing combo numbers_19
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -34,7 +54,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -58,9 +78,285 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: glowing combo numbers_0
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 2608
+        width: 414
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: glowing combo numbers_1
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 2587
+        width: 542
+        height: 330
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: glowing combo numbers_2
+      rect:
+        serializedVersion: 2
+        x: 1240
+        y: 2587
+        width: 482
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: glowing combo numbers_3
+      rect:
+        serializedVersion: 2
+        x: 1807
+        y: 2579
+        width: 575
+        height: 321
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: glowing combo numbers_4
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 2164
+        width: 558
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: glowing combo numbers_5
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 2173
+        width: 567
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: glowing combo numbers_6
+      rect:
+        serializedVersion: 2
+        x: 1443
+        y: 2147
+        width: 546
+        height: 301
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: glowing combo numbers_7
+      rect:
+        serializedVersion: 2
+        x: 2060
+        y: 2151
+        width: 610
+        height: 305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: glowing combo numbers_8
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 1724
+        width: 512
+        height: 296
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: glowing combo numbers_9
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 1712
+        width: 563
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: glowing combo numbers_10
+      rect:
+        serializedVersion: 2
+        x: 1439
+        y: 1716
+        width: 537
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: glowing combo numbers_11
+      rect:
+        serializedVersion: 2
+        x: 2065
+        y: 1712
+        width: 596
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: glowing combo numbers_12
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 1318
+        width: 495
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: glowing combo numbers_13
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1297
+        width: 550
+        height: 292
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: glowing combo numbers_14
+      rect:
+        serializedVersion: 2
+        x: 1439
+        y: 1297
+        width: 575
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: glowing combo numbers_15
+      rect:
+        serializedVersion: 2
+        x: 2065
+        y: 1301
+        width: 571
+        height: 292
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: glowing combo numbers_16
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 844
+        width: 483
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: glowing combo numbers_17
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 840
+        width: 588
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: glowing combo numbers_18
+      rect:
+        serializedVersion: 2
+        x: 1430
+        y: 857
+        width: 525
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: glowing combo numbers_19
+      rect:
+        serializedVersion: 2
+        x: 2065
+        y: 810
+        width: 732
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 
