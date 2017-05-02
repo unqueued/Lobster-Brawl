@@ -15,11 +15,13 @@ public class P1_Meter : MonoBehaviour {
     public float powerLvl = 0f;
     private float usedPower = 0f;
 
+	private bool debugForceP1R2Combo = false;
+
     // Use this for initialization
     void Start () {
 		
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
         comboP1 = GameObject.Find("Combo").GetComponent<Streak>().getComboP1();
@@ -58,16 +60,17 @@ public class P1_Meter : MonoBehaviour {
         }
 
         //One press use all power for impulse push
-        if (Input.GetButtonDown("P1R2"))
+		if (Input.GetButtonDown("P1R2") || debugForceP1R2Combo)
         {
             Debug.Log("Player 1 pressed R2");
-            if(powerLvl <= 0f)
-            {
+			if(powerLvl <= 0f && debugForceP1R2Combo == false)
+			{
                 usedPower = 0f;
                 return;
             }
             else
             {
+				debugForceP1R2Combo = false;
                 R2Pressed = true;
                 usedPower = powerLvl;
                 resetMeter();
@@ -122,6 +125,11 @@ public class P1_Meter : MonoBehaviour {
         }
         */
     }
+
+	public void DebugForceP1R2Combo() {
+		Debug.Log ("Forcing P1R2 Combo");
+		debugForceP1R2Combo = true;
+	}
 
     public void powerUp()
     {
