@@ -52,11 +52,19 @@ public class Player1 : MonoBehaviour
 			Debug.Log ("Combo detected!");
             Impulse();
 		}
+		if (powerMeter.getR2Pressed ()) {
+			Jump ();
+		}
     }
 
     private void HandleMovement(float horizontal)
     {
         myRigidbody.velocity = new Vector2(horizontal * movementSpeed, myRigidbody.velocity.y);
+
+		//Simulate P1R2 powerup
+		if (Input.GetKey (KeyCode.Alpha3)) {
+			powerMeter.DebugForceP1R2Combo ();
+		}
 
 		if (Input.GetKey (KeyCode.Alpha1)) {
 			Impulse ();
@@ -104,7 +112,9 @@ public class Player1 : MonoBehaviour
 
     public void Jump()
     {
-        myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, myRigidbody.velocity.y + jumpHeight);
+		if (IsGrounded()) {
+			myRigidbody.velocity = new Vector2 (myRigidbody.velocity.x, myRigidbody.velocity.y + jumpHeight);
+		}
     }
 
     void OnCollisionEnter2D(Collision2D coll)

@@ -10,8 +10,10 @@ public class Streak : MonoBehaviour{
     public int comboP2 = 0;
     private int topComboP2 = 0;
 
-    public bool P1comboSpawn = false;
-    public bool P2comboSpawn = false;
+    //public bool P1comboSpawn = false;
+    //public bool P2comboSpawn = false;
+
+    public Animator ComboAnimations;
 
     // Use this for initialization
     void Start(){
@@ -20,12 +22,22 @@ public class Streak : MonoBehaviour{
 
     // Update is called once per frame
     void Update(){
-        if (comboP1 % 5 == 0 && P1comboSpawn == false){
-            P1comboSpawn = true;
-            // Instantiate( combo picture goes here, new Vector3 (location goes here), 
+        if (comboP1 == 5){
+            ComboAnimations.Play("Combo 5");
         }
-        if (comboP2 % 5 == 0 && P2comboSpawn == false){
-            P2comboSpawn = true;
+        else if(comboP1 == 10)
+        {
+            ComboAnimations.Play("Combo 10");
+        }
+        else if(comboP1 == 15)
+        {
+            ComboAnimations.Play("Combo 15");
+        }
+        else if(comboP1 == 20)
+        {
+            ComboAnimations.Play("Combo 20");
+        }
+        if (comboP2 == 5 ){
             // Instantiate( combo picture goes here, new Vector3 (location goes here), 
         }
     }
