@@ -15,8 +15,8 @@ public class GameManager : MonoBehaviour {
 
     private int P1TopCombo;
     private int P2TopCombo;
-    public Text P1Score;
-    public Text P2Score;
+    private Text P1Score;
+    private Text P2Score;
 
     public bool time = true;
     public float timer = 3f;
