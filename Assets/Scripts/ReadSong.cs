@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ReadSong : MonoBehaviour
 {
+    //public AudioSource playingAudio;
     private AudioSource playingAudio;
     private bool play;
 
@@ -41,12 +42,13 @@ public class ReadSong : MonoBehaviour
                     generator.make = true;
                     index++;
                 }
-                if(time > (timeStampArr[index] + 1000f)){
+                if(time > (timeStampArr[index] + 10f)){
                     playingAudio.Stop();
                 }
             }
             else if (playingAudio.isPlaying == false)
             {
+                Debug.Log("Song End");
                 play = false;
                 manager.end = true;
                 manager.time = true;

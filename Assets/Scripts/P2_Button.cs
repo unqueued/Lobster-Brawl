@@ -43,6 +43,10 @@ public class P2_Button : MonoBehaviour{
                             powerMeter.powerUp();
                             Destroy(buttons2[i].gameObject);
                             return;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 41c8755af6c9472979903d1ea0ccc1175c7ebb66
                         }
                         else if ((buttons2[i].inRange == false && buttons2[i].tag == "Triangle") || (buttons2[i].inRange == true && buttons2[i].tag != "Triangle"))
                         {
@@ -61,7 +65,13 @@ public class P2_Button : MonoBehaviour{
                             combo.P2Hit();
                             powerMeter.powerUp();
                             Destroy(buttons2[i].gameObject);
+<<<<<<< HEAD
                             return;
+=======
+
+                            return;
+
+>>>>>>> 41c8755af6c9472979903d1ea0ccc1175c7ebb66
                         }
                         else if ((buttons2[i].inRange == false && buttons2[i].tag == "Square") || (buttons2[i].inRange == true && buttons2[i].tag != "Square"))
                         {
@@ -81,6 +91,10 @@ public class P2_Button : MonoBehaviour{
                             powerMeter.powerUp();
                             Destroy(buttons2[i].gameObject);
                             return;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 41c8755af6c9472979903d1ea0ccc1175c7ebb66
                         }
                         else if ((buttons2[i].inRange == false && buttons2[i].tag == "Circle") || (buttons2[i].inRange == true && buttons2[i].tag != "Circle"))
                         {
@@ -99,7 +113,13 @@ public class P2_Button : MonoBehaviour{
                             combo.P2Hit();
                             powerMeter.powerUp();
                             Destroy(buttons2[i].gameObject);
+<<<<<<< HEAD
                             return;
+=======
+
+                            return;
+                            
+>>>>>>> 41c8755af6c9472979903d1ea0ccc1175c7ebb66
                         }
                         else if ((buttons2[i].inRange == false && buttons2[i].tag == "X") || (buttons2[i].inRange == true && buttons2[i].tag != "X"))
                         {
