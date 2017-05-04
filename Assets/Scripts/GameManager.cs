@@ -94,10 +94,11 @@ public class GameManager : MonoBehaviour {
         }
         else if (current == level.lvl1 && timer <= 0f)
         {
+            AudioSource audio = GameObject.Find("BrazilSamba").GetComponent<AudioSource>();
             textFile = GameObject.Find("TimeStamp").GetComponent<ReadText>();
             soundFile = GameObject.Find("TimeStamp").GetComponent<ReadSong>();
             textFile.setText(text1);
-            soundFile.setSong(GameObject.Find("BrazilSamba").GetComponent<AudioSource>());
+            soundFile.setSong(audio);
             P1Score = GameObject.Find("P1 Score").GetComponent<Text>();
             P2Score = GameObject.Find("P2 Score").GetComponent<Text>();
             time = false;
