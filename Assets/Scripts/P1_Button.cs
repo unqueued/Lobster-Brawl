@@ -40,12 +40,7 @@ public class P1_Button : MonoBehaviour {
                             combo.P1Hit();
                             powerMeter.powerUp();
                             Destroy(buttons1[i].gameObject);
-<<<<<<< HEAD
                             return;                            
-=======
-
-                            return;
->>>>>>> 41c8755af6c9472979903d1ea0ccc1175c7ebb66
                         }
                         else if((buttons1[i].inRange == false && buttons1[i].tag == "Triangle") || (buttons1[i].inRange==true && buttons1[i].tag != "Triangle"))
                         {
@@ -64,10 +59,6 @@ public class P1_Button : MonoBehaviour {
                             combo.P1Hit();
                             powerMeter.powerUp();
                             Destroy(buttons1[i].gameObject);
-<<<<<<< HEAD
-=======
-
->>>>>>> 41c8755af6c9472979903d1ea0ccc1175c7ebb66
                             return;
                         }
                         else if ((buttons1[i].inRange == false && buttons1[i].tag == "Square") || (buttons1[i].inRange == true && buttons1[i].tag != "Square"))
@@ -87,12 +78,7 @@ public class P1_Button : MonoBehaviour {
                             combo.P1Hit();
                             powerMeter.powerUp();
                             Destroy(buttons1[i].gameObject);
-<<<<<<< HEAD
                             return;               
-=======
-
-                            return;
->>>>>>> 41c8755af6c9472979903d1ea0ccc1175c7ebb66
                         }
                         else if ((buttons1[i].inRange == false && buttons1[i].tag == "Circle") || (buttons1[i].inRange == true && buttons1[i].tag != "Circle"))
                         {
@@ -111,10 +97,6 @@ public class P1_Button : MonoBehaviour {
                             combo.P1Hit();
                             powerMeter.powerUp();
                             Destroy(buttons1[i].gameObject);
-<<<<<<< HEAD
-=======
-
->>>>>>> 41c8755af6c9472979903d1ea0ccc1175c7ebb66
                             return;
                         }
                         else if ((buttons1[i].inRange == false && buttons1[i].tag == "X") || (buttons1[i].inRange == true && buttons1[i].tag != "X"))
