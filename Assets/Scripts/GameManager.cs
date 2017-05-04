@@ -11,8 +11,6 @@ public class GameManager : MonoBehaviour {
     private ReadText textFile;
 
     //Audio
-    public AudioSource audio1;
-    //public AudioSource audio2;
     private ReadSong soundFile;
 
     private int P1TopCombo;
@@ -21,11 +19,17 @@ public class GameManager : MonoBehaviour {
     public Text P2Score;
 
     public bool time = true;
-    public float timer = 2f;
+    public float timer = 3f;
 
     public enum level{
+        title,
+        intro,
+        tutorial,
         lvl1,
-        end
+        end,
+        intermission,
+        victory,
+        credits
         //,lvl2
     };
     public level current;
@@ -37,36 +41,108 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        textFile = GameObject.Find("TimeStamp").GetComponent<ReadText>();
-        soundFile = GameObject.Find("TimeStamp").GetComponent<ReadSong>();
-        current = level.lvl1;
+        current = level.title;
     }
 
     // Update is called once per frame
     void Update() {
 
-        P1TopCombo = GameObject.Find("Combo").GetComponent<Streak>().getTopComboP1();
-        P2TopCombo = GameObject.Find("Combo").GetComponent<Streak>().getTopComboP2();
+        //Update Score
+        if (current == level.lvl1 && timer > 0f && time == false)
+        {
+            P1TopCombo = GameObject.Find("Combo").GetComponent<Streak>().getTopComboP1();
+            P2TopCombo = GameObject.Find("Combo").GetComponent<Streak>().getTopComboP2();
 
-        P1Score.text = "Score " + P1TopCombo;
-        P2Score.text = "Score " + P2TopCombo;
+            P1Score.text = "Score " + P1TopCombo;
+            P2Score.text = "Score " + P2TopCombo;
+        }
 
         if (timer > 0f && time)
         {
             timer -= Time.deltaTime;
         }
 
-        if (current == level.lvl1 && timer <= 0f)
+        if (current == level.title && timer <= 0f)
         {
+            if (Input.GetButtonDown("P1X") || Input.GetButtonDown("P2X"))
+            {
+                SceneManager.LoadScene("intro screen", LoadSceneMode.Single);
+                current = level.intro;
+                timer = 0.5f;
+                return;
+            }
+        }
+        else if (current == level.intro && timer <= 0f)
+        {
+            if (Input.GetButtonDown("P1X") || Input.GetButtonDown("P2X"))
+            {
+                SceneManager.LoadScene("tutorial", LoadSceneMode.Single);
+                current = level.tutorial;
+                timer = 0.5f;
+                return;
+            }
+        }
+        else if (current == level.tutorial && timer <= 0f)
+        {
+            if (Input.GetButtonDown("P1X") || Input.GetButtonDown("P2X"))
+            {
+                SceneManager.LoadSceneAsync("round1", LoadSceneMode.Single);
+                current = level.lvl1;
+                timer = 1f;
+                return;
+            }
+        }
+        else if (current == level.lvl1 && timer <= 0f)
+        {
+            textFile = GameObject.Find("TimeStamp").GetComponent<ReadText>();
+            soundFile = GameObject.Find("TimeStamp").GetComponent<ReadSong>();
             textFile.setText(text1);
-            soundFile.setSong(audio1);
+            soundFile.setSong(GameObject.Find("BrazilSamba").GetComponent<AudioSource>());
+            P1Score = GameObject.Find("P1 Score").GetComponent<Text>();
+            P2Score = GameObject.Find("P2 Score").GetComponent<Text>();
             time = false;
             timer = 2f;
+            return;
         }
         else if (current == level.end && timer <= 0f)
         {
-            time = false;
-            timer = 2f;
+            if (end_pushed)
+            {
+                if (player1Win)
+                {
+                    SceneManager.LoadScene("victoryforplayer1", LoadSceneMode.Single);
+                }
+                else if (player2Win)
+                {
+                    SceneManager.LoadScene("victoryforplayer2", LoadSceneMode.Single);
+                }
+            }
+            else if (end)
+            {
+                if (P1TopCombo > P2TopCombo)
+                {
+                    SceneManager.LoadScene("victoryforplayer1", LoadSceneMode.Single);
+                }
+                else if (P2TopCombo > P1TopCombo)
+                {
+                    SceneManager.LoadScene("victoryforplayer2", LoadSceneMode.Single);
+                }
+            }
+            timer = 5f;
+            current = level.intermission;
+        }
+        else if (current == level.intermission && timer <= 0f)
+        {
+            SceneManager.LoadScene("intermission", LoadSceneMode.Single);
+            current = level.victory;
+            timer = 10f;
+            if(timer == 3f)
+            {
+                SceneManager.LoadSceneAsync("victory screen", LoadSceneMode.Single);
+            }
+        }
+        else if (current == level.victory && timer <= 0f)
+        {
             if (end_pushed)
             {
                 if (player1Win)
@@ -78,7 +154,7 @@ public class GameManager : MonoBehaviour {
                     GameObject.Find("Winner").GetComponent<Text>().text = "Player 2 Wins";
                 }
             }
-            else if(end)
+            else if (end)
             {
                 if (P1TopCombo > P2TopCombo)
                 {
@@ -89,7 +165,16 @@ public class GameManager : MonoBehaviour {
                     GameObject.Find("Winner").GetComponent<Text>().text = "Player 2 Wins";
                 }
             }
-        }/*
+            current = level.credits;
+            timer = 2f;
+        }
+        else if (current == level.credits && timer <= 0f)
+        {
+            SceneManager.LoadScene("credits",LoadSceneMode.Single);
+            timer = 10f;
+            current = level.title;
+        }
+        /*
         else if(current == level.lvl2 && Input.GetKeyDown(KeyCode.Return))
         {
             textFile.setText(text2);

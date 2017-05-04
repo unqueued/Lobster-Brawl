@@ -41,7 +41,11 @@ public class P2_Button : MonoBehaviour{
                             combo.P2Hit();
                             powerMeter.powerUp();
                             Destroy(buttons2[i].gameObject);
+<<<<<<< HEAD
+                            return;
+=======
                             TriangleAnimations.Play("Triangle Hit");
+>>>>>>> f679693907d8fb58a96a21a1c5727561549d002c
                         }
                         else if ((buttons2[i].inRange == false && buttons2[i].tag == "Triangle") || (buttons2[i].inRange == true && buttons2[i].tag != "Triangle"))
                         {
@@ -59,7 +63,11 @@ public class P2_Button : MonoBehaviour{
                             combo.P2Hit();
                             powerMeter.powerUp();
                             Destroy(buttons2[i].gameObject);
+<<<<<<< HEAD
+                            return;
+=======
                             SquareAnimations.Play("Square Hit");
+>>>>>>> f679693907d8fb58a96a21a1c5727561549d002c
                         }
                         else if ((buttons2[i].inRange == false && buttons2[i].tag == "Square") || (buttons2[i].inRange == true && buttons2[i].tag != "Square"))
                         {
@@ -77,7 +85,11 @@ public class P2_Button : MonoBehaviour{
                             combo.P2Hit();
                             powerMeter.powerUp();
                             Destroy(buttons2[i].gameObject);
+<<<<<<< HEAD
+                            return;
+=======
                             CircleAnimations.Play("Circle Hit");
+>>>>>>> f679693907d8fb58a96a21a1c5727561549d002c
                         }
                         else if ((buttons2[i].inRange == false && buttons2[i].tag == "Circle") || (buttons2[i].inRange == true && buttons2[i].tag != "Circle"))
                         {
@@ -95,7 +107,11 @@ public class P2_Button : MonoBehaviour{
                             combo.P2Hit();
                             powerMeter.powerUp();
                             Destroy(buttons2[i].gameObject);
+<<<<<<< HEAD
+                            return;
+=======
                             XAnimations.Play("X Hit");
+>>>>>>> f679693907d8fb58a96a21a1c5727561549d002c
                         }
                         else if ((buttons2[i].inRange == false && buttons2[i].tag == "X") || (buttons2[i].inRange == true && buttons2[i].tag != "X"))
                         {
