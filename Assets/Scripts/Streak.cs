@@ -54,9 +54,13 @@ public class Streak : MonoBehaviour{
             {
                 P1ComboAnimations.Play("Combo 35");
             }
+            else
+            {
+                P1ComboAnimations.Play("Combo Idle");
+            }
 
 
-            if (comboP2 == 5)
+        if (comboP2 == 5)
             {
                 P2ComboAnimations.Play("Combo 5");
             }
@@ -83,6 +87,10 @@ public class Streak : MonoBehaviour{
             else if (comboP2 >= 35)
             {
                 P2ComboAnimations.Play("Combo 35");
+            }
+            else
+            {
+                P2ComboAnimations.Play("Combo Idle");
             }
     }
 
