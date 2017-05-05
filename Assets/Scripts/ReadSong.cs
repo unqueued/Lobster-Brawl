@@ -42,7 +42,7 @@ public class ReadSong : MonoBehaviour
                     generator.make = true;
                     index++;
                 }
-                if(time > (timeStampArr[index] + 10f)){
+                if(time > (timeStampArr[index] + 4f)){
                     playingAudio.Stop();
                 }
             }

@@ -39,8 +39,10 @@ public class GameManager : MonoBehaviour {
     public bool player1Win = false;
     public bool player2Win = false;
 
-	// Use this for initialization
-	void Start () {
+    int temp = 0;
+
+    // Use this for initialization
+    void Start () {
         current = level.title;
     }
 
@@ -62,7 +64,8 @@ public class GameManager : MonoBehaviour {
             timer -= Time.deltaTime;
         }
 
-        if (current == level.title && timer <= 0f)
+        //Level Change
+        if(current == level.title && timer <= 0f)
         {
             if (Input.GetButtonDown("P1X") || Input.GetButtonDown("P2X"))
             {
@@ -107,41 +110,54 @@ public class GameManager : MonoBehaviour {
         }
         else if (current == level.end && timer <= 0f)
         {
-            if (end_pushed)
-            {
-                if (player1Win)
+            if(temp == 0) {
+                temp++;
+                if (end_pushed)
                 {
-                    SceneManager.LoadScene("victoryforplayer1", LoadSceneMode.Single);
+                    if (player1Win)
+                    {
+                        SceneManager.LoadScene("victoryforplayer1", LoadSceneMode.Single);
+                        
+                    }
+                    else if (player2Win)
+                    {
+                        SceneManager.LoadScene("victoryforplayer2", LoadSceneMode.Single);
+                        
+                    }
                 }
-                else if (player2Win)
+                else if (end)
                 {
-                    SceneManager.LoadScene("victoryforplayer2", LoadSceneMode.Single);
+                    if (P1TopCombo > P2TopCombo)
+                    {
+                        SceneManager.LoadScene("victoryforplayer1", LoadSceneMode.Single);
+                        
+                    }
+                    else if (P2TopCombo > P1TopCombo)
+                    {
+                        SceneManager.LoadScene("victoryforplayer2", LoadSceneMode.Single);
+                        
+                    }   
                 }
             }
-            else if (end)
-            {
-                if (P1TopCombo > P2TopCombo)
-                {
-                    SceneManager.LoadScene("victoryforplayer1", LoadSceneMode.Single);
-                }
-                else if (P2TopCombo > P1TopCombo)
-                {
-                    SceneManager.LoadScene("victoryforplayer2", LoadSceneMode.Single);
-                }
-            }
-            timer = 5f;
-            current = level.intermission;
-        }
-        else if (current == level.intermission && timer <= 0f)
-        {
-            SceneManager.LoadScene("intermission", LoadSceneMode.Single);
-            current = level.victory;
-            timer = 10f;
-            if(timer == 3f)
+            if (Input.GetButtonDown("P1X") || Input.GetButtonDown("P2X"))
             {
                 SceneManager.LoadSceneAsync("victory screen", LoadSceneMode.Single);
+                current = level.victory;
+                timer = 3.5f;
+                return;
             }
         }
+        /*
+            else if (current == level.intermission && timer <= 0f)
+            {
+                SceneManager.LoadScene("intermission", LoadSceneMode.Single);
+                current = level.victory;
+                timer = 10f;
+                if(timer == 3f)
+                {
+                    SceneManager.LoadSceneAsync("victory screen", LoadSceneMode.Single);
+                }
+            }*/
         else if (current == level.victory && timer <= 0f)
         {
             if (end_pushed)
@@ -165,36 +181,14 @@ public class GameManager : MonoBehaviour {
                 {
                     GameObject.Find("Winner").GetComponent<Text>().text = "Player 2 Wins";
                 }
+                timer = 4f;
+                current = level.credits;
             }
-            current = level.credits;
-            timer = 2f;
-        }
-        else if (current == level.credits && timer <= 0f)
-        {
-            SceneManager.LoadScene("credits",LoadSceneMode.Single);
-            timer = 10f;
-            current = level.title;
-        }
-        /*
-        else if(current == level.lvl2 && Input.GetKeyDown(KeyCode.Return))
-        {
-            textFile.setText(text2);
-            soundFile.setSong(audio2);
-        }
-
-        if (next == true)
-        {
-            if(current == level.lvl1)
+            else if (current == level.credits && timer <= 0f)
             {
-                SceneManager.LoadScene("round2", LoadSceneMode.Single);
-                current = level.lvl2;
-                next = false;
+                SceneManager.LoadScene("credits",LoadSceneMode.Single);
+                timer = 10f;
             }
-            else if(current == level.lvl2)
-            {
-                next = false;
-            }
-        }*/
-        
+        }
     }
 }

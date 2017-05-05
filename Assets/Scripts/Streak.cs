@@ -21,7 +21,7 @@ public class Streak : MonoBehaviour{
     }
 
     // Update is called once per frame
-    void Update(){
+    void Update(){/*
         if (comboP1 == 5){
             ComboAnimations.Play("Combo 5");
         }
@@ -39,7 +39,7 @@ public class Streak : MonoBehaviour{
         }
         if (comboP2 == 5 ){
             // Instantiate( combo picture goes here, new Vector3 (location goes here), 
-        }
+        }*/
     }
 
     //Players Miss
