@@ -37,18 +37,19 @@ public class ReadSong : MonoBehaviour
             if (playingAudio.isPlaying && timeStampArr.Length != index)
             {
                 float time = (Mathf.Floor(playingAudio.time * 10) / 10) + 0.1f;
+                if (time > (timeStampArr[index] + 10f))
+                {
+                    playingAudio.Stop();
+                }
                 if (timeStampArr[index] == time)
                 {
                     generator.make = true;
                     index++;
                 }
-                if(time > (timeStampArr[index] + 4f)){
-                    playingAudio.Stop();
-                }
+
             }
             else if (playingAudio.isPlaying == false)
             {
-                Debug.Log("Song End");
                 play = false;
                 manager.end = true;
                 manager.time = true;
