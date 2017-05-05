@@ -13,70 +13,77 @@ public class Streak : MonoBehaviour{
     //public bool P1comboSpawn = false;
     //public bool P2comboSpawn = false;
 
-    public Animator ComboAnimations;
+    public Animator P1ComboAnimations;
+    public Animator P2ComboAnimations;
+
+    bool done = false;
 
     // Use this for initialization
-    void Start(){
-
+    void Start()
+    {
     }
 
     // Update is called once per frame
     void Update(){
-        if (comboP1 == 5){
-            ComboAnimations.Play("Combo 5");
-        }
-        else if(comboP1 == 10)
-        {
-            ComboAnimations.Play("Combo 10");
-        }
-        else if(comboP1 == 15)
-        {
-            ComboAnimations.Play("Combo 15");
-        }
-        else if(comboP1 == 20)
-        {
-            ComboAnimations.Play("Combo 20");
-        }
-        else if(comboP1 == 25)
-        {
-            ComboAnimations.Play("Combo 25");
-        }
-        else if(comboP1 == 30)
-        {
-            ComboAnimations.Play("Combo 30");
-        }
-        else if(comboP1 >= 35)
-        {
-            ComboAnimations.Play("Combo 35");
-        }
-        if (comboP2 == 5)
-        {
-            ComboAnimations.Play("Combo 5");
-        }
-        else if (comboP2 == 10)
-        {
-            ComboAnimations.Play("Combo 10");
-        }
-        else if (comboP2 == 15)
-        {
-            ComboAnimations.Play("Combo 15");
-        }
-        else if (comboP2 == 20)
-        {
-            ComboAnimations.Play("Combo 20");
-        }
-        else if (comboP2 == 25)
-        {
-            ComboAnimations.Play("Combo 25");
-        }
-        else if (comboP2 == 30)
-        {
-            ComboAnimations.Play("Combo 30");
-        }
-        else if (comboP2 >= 35)
-        {
-            ComboAnimations.Play("Combo 35");
-        }
+
+        if (comboP1 == 5)
+            {
+                P1ComboAnimations.Play("Combo 5");
+            }
+            else if (comboP1 == 10)
+            {
+                P1ComboAnimations.Play("Combo 10");
+            }
+            else if (comboP1 == 15)
+            {
+                P1ComboAnimations.Play("Combo 15");
+            }
+            else if (comboP1 == 20)
+            {
+                P1ComboAnimations.Play("Combo 20");
+            }
+            else if (comboP1 == 25)
+            {
+                P1ComboAnimations.Play("Combo 25");
+            }
+            else if (comboP1 == 30)
+            {
+                P1ComboAnimations.Play("Combo 30");
+            }
+            else if (comboP1 >= 35)
+            {
+                P1ComboAnimations.Play("Combo 35");
+            }
+
+
+            if (comboP2 == 5)
+            {
+                P2ComboAnimations.Play("Combo 5");
+            }
+            else if (comboP2 == 10)
+            {
+                P2ComboAnimations.Play("Combo 10");
+            }
+            else if (comboP2 == 15)
+            {
+                P2ComboAnimations.Play("Combo 15");
+            }
+            else if (comboP2 == 20)
+            {
+                P2ComboAnimations.Play("Combo 20");
+            }
+            else if (comboP2 == 25)
+            {
+                P2ComboAnimations.Play("Combo 25");
+            }
+            else if (comboP2 == 30)
+            {
+                P2ComboAnimations.Play("Combo 30");
+            }
+            else if (comboP2 >= 35)
+            {
+                P2ComboAnimations.Play("Combo 35");
+            }
     }
 
     //Players Miss

@@ -34,22 +34,18 @@ public class P1_Miss : MonoBehaviour {
                 if (other.gameObject.tag == "Triangle")
                 {
                     TriangleAnimations.Play("Triangle Miss");
-                    //ComboAnimations.Play("Miss");
                 }
                 else if (other.gameObject.tag == "Square")
                 {
                     SquareAnimations.Play("Square Miss");
-                    //ComboAnimations.Play("Miss");
                 }
                 else if (other.gameObject.tag == "Circle")
                 {
                     CircleAnimations.Play("Circle Miss");
-                    //ComboAnimations.Play("Miss");
                 }
                 else if (other.gameObject.tag == "X")
                 {
                     XAnimations.Play("X Miss");
-                    //ComboAnimations.Play("Miss");
                 }
             }
         }
