@@ -21,7 +21,7 @@ public class Streak : MonoBehaviour{
     }
 
     // Update is called once per frame
-    void Update(){/*
+    void Update(){
         if (comboP1 == 5){
             ComboAnimations.Play("Combo 5");
         }
@@ -37,9 +37,46 @@ public class Streak : MonoBehaviour{
         {
             ComboAnimations.Play("Combo 20");
         }
-        if (comboP2 == 5 ){
-            // Instantiate( combo picture goes here, new Vector3 (location goes here), 
-        }*/
+        else if(comboP1 == 25)
+        {
+            ComboAnimations.Play("Combo 25");
+        }
+        else if(comboP1 == 30)
+        {
+            ComboAnimations.Play("Combo 30");
+        }
+        else if(comboP1 >= 35)
+        {
+            ComboAnimations.Play("Combo 35");
+        }
+        if (comboP2 == 5)
+        {
+            ComboAnimations.Play("Combo 5");
+        }
+        else if (comboP2 == 10)
+        {
+            ComboAnimations.Play("Combo 10");
+        }
+        else if (comboP2 == 15)
+        {
+            ComboAnimations.Play("Combo 15");
+        }
+        else if (comboP2 == 20)
+        {
+            ComboAnimations.Play("Combo 20");
+        }
+        else if (comboP2 == 25)
+        {
+            ComboAnimations.Play("Combo 25");
+        }
+        else if (comboP2 == 30)
+        {
+            ComboAnimations.Play("Combo 30");
+        }
+        else if (comboP2 >= 35)
+        {
+            ComboAnimations.Play("Combo 35");
+        }
     }
 
     //Players Miss
