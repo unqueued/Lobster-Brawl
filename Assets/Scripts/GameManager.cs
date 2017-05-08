@@ -55,8 +55,11 @@ public class GameManager : MonoBehaviour {
             P1TopCombo = GameObject.Find("Combo").GetComponent<Streak>().getTopComboP1();
             P2TopCombo = GameObject.Find("Combo").GetComponent<Streak>().getTopComboP2();
 
-            P1Score.text = "Score " + P1TopCombo;
-            P2Score.text = "Score " + P2TopCombo;
+            if(P1Score != null)
+            {
+                P1Score.text = "Score " + P1TopCombo;
+                P2Score.text = "Score " + P2TopCombo;
+            }
         }
 
         if (timer > 0f && time)
@@ -89,7 +92,7 @@ public class GameManager : MonoBehaviour {
         {
             if (Input.GetButtonDown("P1X") || Input.GetButtonDown("P2X"))
             {
-                SceneManager.LoadSceneAsync("round1", LoadSceneMode.Single);
+                SceneManager.LoadScene("round1", LoadSceneMode.Single);
                 current = level.lvl1;
                 timer = 1f;
                 return;
@@ -97,9 +100,9 @@ public class GameManager : MonoBehaviour {
         }
         else if (current == level.lvl1 && timer <= 0f)
         {
-            AudioSource audio = GameObject.Find("BrazilSamba").GetComponent<AudioSource>();
             textFile = GameObject.Find("TimeStamp").GetComponent<ReadText>();
             soundFile = GameObject.Find("TimeStamp").GetComponent<ReadSong>();
+            AudioSource audio = GameObject.Find("BrazilSamba").GetComponent<AudioSource>();
             textFile.setText(text1);
             soundFile.setSong(audio);
             P1Score = GameObject.Find("P1 Score").GetComponent<Text>();
@@ -160,35 +163,43 @@ public class GameManager : MonoBehaviour {
             }*/
         else if (current == level.victory && timer <= 0f)
         {
-            if (end_pushed)
+            if (temp == 1)
             {
-                if (player1Win)
+                temp++;
+                if (end_pushed)
                 {
-                    GameObject.Find("Winner").GetComponent<Text>().text = "Player 1 Wins";
+                    if (player1Win)
+                    {
+                        GameObject.Find("Winner").GetComponent<Text>().text = "Player 1 Wins";
+                    }
+                    else if (player2Win)
+                    {
+                        GameObject.Find("Winner").GetComponent<Text>().text = "Player 2 Wins";
+                    }
                 }
-                else if (player2Win)
+                else if (end)
                 {
-                    GameObject.Find("Winner").GetComponent<Text>().text = "Player 2 Wins";
+                    if (P1TopCombo > P2TopCombo)
+                    {
+                        GameObject.Find("Winner").GetComponent<Text>().text = "Player 1 Wins";
+                    }
+                    else if (P2TopCombo > P1TopCombo)
+                    {
+                        GameObject.Find("Winner").GetComponent<Text>().text = "Player 2 Wins";
+                    }
                 }
             }
-            else if (end)
+            if (Input.GetButtonDown("P1X") || Input.GetButtonDown("P2X"))
             {
-                if (P1TopCombo > P2TopCombo)
-                {
-                    GameObject.Find("Winner").GetComponent<Text>().text = "Player 1 Wins";
-                }
-                else if (P2TopCombo > P1TopCombo)
-                {
-                    GameObject.Find("Winner").GetComponent<Text>().text = "Player 2 Wins";
-                }
-                timer = 4f;
+                SceneManager.LoadScene("credits", LoadSceneMode.Single);
                 current = level.credits;
+                timer = 3.5f;
+                return;
             }
-            else if (current == level.credits && timer <= 0f)
-            {
-                SceneManager.LoadScene("credits",LoadSceneMode.Single);
-                timer = 10f;
-            }
+        }
+        else if (current == level.credits && timer <= 0f)
+        {
+            timer = 9f;
         }
     }
 }

@@ -25,8 +25,16 @@ public class Streak : MonoBehaviour{
 
     // Update is called once per frame
     void Update(){
-
-        if (comboP1 == 5)
+        if (this.gameObject.GetComponentInParent<GameManager>().current == GameManager.level.title)
+        {
+                comboP1 = 0;
+                topComboP1 = 0;
+                comboP2 = 0;
+                topComboP2 = 0;
+        }
+        if (this.gameObject.GetComponentInParent<GameManager>().current == GameManager.level.lvl1)
+        {
+            if (comboP1 == 5)
             {
                 P1ComboAnimations.Play("Combo 5");
             }
@@ -60,7 +68,7 @@ public class Streak : MonoBehaviour{
             }
 
 
-        if (comboP2 == 5)
+            if (comboP2 == 5)
             {
                 P2ComboAnimations.Play("Combo 5");
             }
@@ -92,6 +100,13 @@ public class Streak : MonoBehaviour{
             {
                 P2ComboAnimations.Play("Combo Idle");
             }
+        }
+        else
+        {
+            P1ComboAnimations.Play("Combo Idle");
+            P2ComboAnimations.Play("Combo Idle");
+        }
+        
     }
 
     //Players Miss
