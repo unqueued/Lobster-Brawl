@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour {
     public bool player2Win = false;
 
     int temp = 0;
+    public int temp2 = 0;
 
     // Use this for initialization
     void Start () {
@@ -70,11 +71,16 @@ public class GameManager : MonoBehaviour {
         //Level Change
         if(current == level.title && timer <= 0f)
         {
+            if (temp2 == -1)
+            {
+                Destroy(gameObject);
+            }
             if (Input.GetButtonDown("P1X") || Input.GetButtonDown("P2X"))
             {
                 SceneManager.LoadScene("intro screen", LoadSceneMode.Single);
                 current = level.intro;
                 timer = 0.5f;
+                temp2 = -1;
                 return;
             }
         }
@@ -193,13 +199,19 @@ public class GameManager : MonoBehaviour {
             {
                 SceneManager.LoadScene("credits", LoadSceneMode.Single);
                 current = level.credits;
-                timer = 3.5f;
+                timer = 9f;
                 return;
             }
         }
         else if (current == level.credits && timer <= 0f)
         {
-            timer = 9f;
+            if (Input.GetButtonDown("P1X") || Input.GetButtonDown("P2X"))
+            {
+                SceneManager.LoadScene("title screen", LoadSceneMode.Single);
+                current = level.title;
+                timer = 0f;
+                return;
+            }
         }
     }
 }
